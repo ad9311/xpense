@@ -13,6 +13,8 @@
     <span><strong>Name: <strong></span><%= link_to expense.name, expense %>
     <p><strong>Amount: </strong><%= expense.amount %></p>
     <p><strong>Created On: </strong><%= expense.created_at.strftime("%d-%b-%Y") %></p>
+    <%= link_to "Delete From Folder", delete_from_group_path(expense_id: expense.id, group_id: @group.id), method: :delete %>
+    <br/><br/><br/>
   <% end %>
 </div>
 <br/>
