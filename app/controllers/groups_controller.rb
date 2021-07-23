@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @expenses = Group.find(params[:id]).expenses
   end
 
   def new
@@ -46,6 +47,6 @@ class GroupsController < ApplicationController
     end
 
     def group_params
-      params.require(:group).permit(:user_id, :name, :icon)
+      params.require(:group).permit(:name, :icon)
     end
 end
