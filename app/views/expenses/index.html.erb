@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My External Expenses</h1>
+
+<p>
+  <strong>Total spent:</strong>
+  <%= @total_spent %>
+</p>
+
+<% @expenses.each do |expense| %>
+  <div>
+    <%= expense.name %>
+    <%= expense.amount %>
+    <%= expense.created_at.strftime("%d-%b-%Y") %>
+    <%= link_to 'Show', expense %>
+    <br/>
+  </div>
+<% end %>
+
+<br/>
+
+<%= link_to 'New Expense', new_expense_path %>
