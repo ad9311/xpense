@@ -10,4 +10,14 @@ class Expense < ApplicationRecord
     groups = Group.all
     groups.where.not(id: self.folders)
   end
+  
+  def self.grouped
+    grouped_expenses = GroupedExpense.select('expense_id as id')
+    self.where(id: grouped_expenses)
+  end
+
+  def self.ungrouped
+    grouped_expenses = GroupedExpense.select('expense_id as id')
+    self.where.not(id: grouped_expenses)
+  end
 end

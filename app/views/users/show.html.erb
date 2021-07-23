@@ -1,5 +1,8 @@
 <h1><%= @user.name %></h1>
-<%= link_to "Expenses", expenses_path %>
+<%= link_to "My Expenses", expenses_path %>
+<br/>
+<%= link_to "My External Expenses", external_expenses_path %>
+<br/>
 <%= link_to "Folders", groups_path %>
 <br/>
 <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>

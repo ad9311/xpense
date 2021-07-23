@@ -1,8 +1,8 @@
 class GroupedExpensesController < ApplicationController
-  def create
+  def add_from_expense
     @grouped_expense = GroupedExpense.create(grouped_expenses_params)
     if @grouped_expense.save
-      redirect_to root_path
+      redirect_to expense_path(params[:expense_id])
     else
       redirect_to root_path
     end

@@ -7,7 +7,7 @@
   <%= @total_spent %>
 </p>
 
-<% @grouped_expenses.each do |expense| %>
+<% @ungrouped_expenses.each do |expense| %>
   <div>
     <%= expense.name %>
     <%= expense.amount %>

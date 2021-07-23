@@ -5,6 +5,13 @@ class ExpensesController < ApplicationController
 
   def index
     @expenses = current_user.expenses
+    @grouped_expenses = @expenses.grouped
+    @total_spent = current_user.total_spent
+  end
+
+  def index_ungrouped
+    @expenses = current_user.expenses
+    @ungrouped_expenses = @expenses.ungrouped
     @total_spent = current_user.total_spent
   end
 
