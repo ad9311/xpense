@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
 
 
   def index
-    @groups = Group.all
+    @groups = current_user.folders.ordered_alphabetically
   end
 
   def show
