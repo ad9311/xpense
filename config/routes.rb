@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :groups
   resources :expenses
   root 'users#show'
   devise_for :users

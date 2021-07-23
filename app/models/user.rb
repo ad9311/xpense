@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   # Associations
   has_many :expenses, foreign_key: :author_id, class_name: 'Expense', dependent: :destroy
+  has_many :folders, class_name: 'Group', foreign_key: 'user_id'
 
   def total_spent
     self.expenses.sum(:amount)

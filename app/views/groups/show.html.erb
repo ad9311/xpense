@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @group.icon %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @group.created_at.strftime("%d-%b-%Y") %>
+</p>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Destroy', group_path(@group), method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'New Group', new_group_path %> |
+<%= link_to 'Back', groups_path %>

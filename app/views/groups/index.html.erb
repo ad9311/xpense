@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Folders</h1>
+
+<% @groups.each do |group| %>
+    <%= group.icon %>
+    <%= group.name %>
+    <%= group.created_at.strftime("%d-%b-%Y") %>
+    <%= link_to 'Show', group %>
+  <br/>
+<% end %>
+
+<br>
+
+<%= link_to 'New Group', new_group_path %>
