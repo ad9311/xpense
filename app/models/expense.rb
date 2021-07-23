@@ -3,8 +3,8 @@ class Expense < ApplicationRecord
   validates :amount, presence: true, numericality: true
 
   belongs_to :author, class_name: 'User'
-  has_many :groups, foreign_key: :group_id, class_name: 'GroupedExpense'
-  has_many :folders, through: :groups, source: :expense
+  has_many :groups, foreign_key: :expense_id, class_name: 'GroupedExpense'
+  has_many :folders, through: :groups, source: :group
 
   def not_in_group
     groups = Group.all

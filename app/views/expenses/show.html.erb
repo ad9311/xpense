@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<%= @list[0].name %>
+
 <p>
   <strong>Name:</strong>
   <%= @expense.name %>
@@ -12,8 +12,17 @@
 
 <p>
   <strong>Date Created:</strong>
-  <%= @expense.created_at.strftime("%d-%b-%Y") %>
+  <%= @expense.created_at.strftime('%d-%b-%Y') %>
 </p>
+
+<div>
+  <% @add_to_group_list.each do |group| %>
+    <%= link_to "Add to #{group.name}", add_to_group_path(expense_id: @expense.id, group_id: group.id) %>
+    <br/>
+  <% end %>
+</div>
+
+<br/>
 
 <%= link_to 'Edit', edit_expense_path(@expense) %> |
 <%= link_to 'Delete', expense_path(@expense), method: :delete, data: { confirm: 'Are you sure?' } %> |

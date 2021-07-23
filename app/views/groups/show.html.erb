@@ -18,6 +18,6 @@
 <br/>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Destroy', group_path(@group), method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'New Group', new_group_path %> |
+<%= link_to 'Delete', group_path(@group), method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'New', new_group_path %> |
 <%= link_to 'Back', groups_path %>

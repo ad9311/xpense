@@ -10,7 +10,7 @@ class ExpensesController < ApplicationController
 
   def show
     @expense = Expense.find(params[:id])
-    @list = @expense.not_in_group
+    @add_to_group_list = @expense.not_in_group
   end
 
   def new
