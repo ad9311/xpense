@@ -9,6 +9,8 @@ class ExpensesController < ApplicationController
   end
 
   def show
+    @expense = Expense.find(params[:id])
+    @list = @expense.not_in_group
   end
 
   def new
