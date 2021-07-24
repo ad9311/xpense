@@ -14,11 +14,6 @@
   </table>
   <br/>
 </div>
-<div class="d-flex justify-between flex-column bottom-group">
-  <button class="bottom-green-button-unfixed"><%= link_to 'Edit', edit_expense_path(@expense) %></button>
-  <button class="bottom-green-button-unfixed"><%= link_to 'Delete', expense_path(@expense), method: :delete, data: { confirm: 'Are you sure?' } %></button>
-  <button class="bottom-green-button-unfixed"><%= link_to 'New', new_expense_path %></button>
-</div>
 <% unless @add_to_group_list.empty? %>
   <div class="text-center"><h4 class="m-0">Add To Group:</h4></div>
   <div class="pcon-4 pt-2">
@@ -32,3 +27,8 @@
     </table>
   <div>
 <% end %>
+<div class="d-flex justify-between flex-column bottom-group">
+  <button class="bottom-green-button-unfixed"><%= link_to 'Edit', edit_expense_path(@expense) %></button>
+  <button class="bottom-green-button-unfixed"><%= link_to 'Delete', expense_path(@expense), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+  <button class="bottom-green-button-unfixed"><%= link_to 'New', new_expense_path %></button>
+</div>

@@ -1,15 +1,22 @@
-<p id="notice"><%= notice %></p>
 
-<h1>My Folders</h1>
+<section>
+  <div class="text-center blue-div">
+    <h1 class="m-0">My Folders</h1>
+  </div>
+</section>
+<div class="pcon-4 pt-2">
+  <table class="white-div">
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= image_tag group.icon %></td>
+        <td><span class="pr-1"><strong><%= group.name %></strong></span></td>
+        <td><span class="pr-1"><small class="date"><%= group.created_at.strftime("%d-%b-%Y") %></small></span></td>
+        <td><button class="green-button"><%= link_to 'Show', group %></button></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<div>
+  <button class="bottom-green-button"><%= link_to 'New Folder', new_group_path %></button>
+</div>
 
-<% @groups.each do |group| %>
-    <%= image_tag group.icon %>
-    <%= group.name %>
-    <%= group.created_at.strftime("%d-%b-%Y") %>
-    <%= link_to 'Show', group %>
-  <br/>
-<% end %>
-
-<br>
-
-<%= link_to 'New Folder', new_group_path %>

@@ -6,4 +6,8 @@ class Group < ApplicationRecord
   has_many :expenses, through: :grouped_expenses, class_name: 'Expense'
 
   scope :ordered_alphabetically, -> { order(name: :asc) }
+
+  def number_of_expenses
+    expenses.count
+  end
 end
