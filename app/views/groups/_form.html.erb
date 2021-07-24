@@ -17,9 +17,16 @@
   </div>
 
   <div class="field">
-    <%= form.label :icon %>
-    <%= form.text_area :icon %>
+    <%= form.collection_radio_buttons(:icon, Icon.order(:name), :icon, :name) do |b| 
+      b.label(class: "icon") { b.radio_button + b.text }
+    end %>
+    <br/>
+    <% @icons.each do |icon| %>
+      <%= image_tag icon.icon %>
+    <% end %>
   </div>
+
+  <br/>
 
   <div class="actions">
     <%= form.submit %>

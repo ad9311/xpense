@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    @icons = Icon.all.ordered_alphabetically
   end
 
   def edit
@@ -37,6 +38,7 @@ class GroupsController < ApplicationController
   end
 
   def destroy
+    @group.expenses.destroy_all
     @group.destroy
     redirect_to groups_url, notice: "Group was successfully destroyed."
   end

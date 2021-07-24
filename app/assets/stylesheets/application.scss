@@ -1,0 +1,88 @@
+$blue: #3778c2;
+$dark-blue: #2d5e96;
+$darker-blue: #1c4a80;
+$green: #5fb523;
+$smoke: #434b54;
+$dark-gray: darkgray;
+$pale-gray: #f1f3f2;
+$white: white;
+$gray-shaddow: 1px 1px 1px $dark-gray;
+$blue-shaddow: 3px 3px 2px $darker-blue;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $pale-gray;
+  color: $smoke;
+}
+
+.user-body {
+  margin: 0;
+  padding: 0;
+  background-color: $blue;
+  color: $white;
+}
+
+.topbar {
+  width: 100%;
+  background-color: $blue;
+  color: $white;
+}
+
+.topbar-user {
+  width: 100%;
+  background-color: $dark-blue;
+  color: $white;
+  box-shadow: $blue-shaddow;
+}
+
+.navbar-height {
+  height: 40px;
+}
+
+.div-space {
+  height: 40px;
+}
+
+.top-padding {
+  padding-top: 200px;
+}
+
+.date {
+  color: $dark-gray;
+}
+
+.blue-div {
+  padding: 20px 0 20px 0;
+  background-color: $blue;
+  color: $white;
+  box-shadow: $blue-shaddow;
+}
+
+.white-div {
+  padding: 5px;
+  background-color: $white;
+  box-shadow: $gray-shaddow;
+}
+
+.line {
+  width: 50px;
+}
+
+.green-button {
+  padding: 5px 10px;
+  border: none;
+  background-color: $green;
+  color: $white;
+}
+
+.bottom-green-button {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  border: none;
+  background-color: $green;
+  color: $white;
+  font-size: 20px;
+}

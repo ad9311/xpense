@@ -3,7 +3,7 @@
 <h1>My Folders</h1>
 
 <% @groups.each do |group| %>
-    <%= group.icon %>
+    <%= image_tag group.icon %>
     <%= group.name %>
     <%= group.created_at.strftime("%d-%b-%Y") %>
     <%= link_to 'Show', group %>

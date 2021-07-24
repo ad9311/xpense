@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% @group.icon %>
+<%= image_tag @group.icon %>
 
 <h1>Name: <%= @group.name %></h1>
 
@@ -10,7 +10,7 @@
 
 <div>
   <% @expenses.each do |expense| %>
-    <%= expense.folders.first.icon %>
+    <%= image_tag expense.folders.first.icon %>
     <span><strong>Name: <strong></span><%= link_to expense.name, expense %>
     <p><strong>Amount: </strong><%= expense.amount %></p>
     <p><strong>Created On: </strong><%= expense.created_at.strftime("%d-%b-%Y") %></p>

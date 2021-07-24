@@ -1,0 +1,23 @@
+<div class="pos-fixed top-0 topbar">
+  <nav class="navbar-height d-flex justify-between align-items-center pcon-4">
+    <% unless current_user == '/users/sign_out' %>
+      <ul class="d-flex">
+        <li class="pr-1"><%= link_to current_user.name, root_path %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+      </ul>
+      <ul class="d-none-2">
+        <li><span>TODO</span></li>
+      </ul>
+      <ul class="d-none d-flex-2">
+        <li class="pr-1"><%= link_to "Expenses", expenses_path %></li>
+        <li class="pr-1"><%= link_to "External Expenses", external_expenses_path %></li>
+        <li><%= link_to "Folders", groups_path %></li>
+      </ul>
+    <% else %>
+      <ul>
+        <li><span>Xpens<span></li>
+       </ul> 
+    <% end %>
+  </nav>
+</div>
+<div class="div-space"></div>
