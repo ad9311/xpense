@@ -3,11 +3,12 @@
     <h1 class="m-0">My Folders</h1>
   </div>
 </section>
+<% unless current_user.folders.empty?%>
 <div class="pcon-4 pt-2">
   <table class="white-div">
     <% @groups.each do |group| %>
       <tr>
-        <td><%= image_tag group.icon %></td>
+        <td><%= image_tag group.icon, class: "folder-icon" %></td>
         <td><span class="pr-1"><strong><%= group.name %></strong></span></td>
         <td><span class="pr-1"><small class="date"><%= group.created_at.strftime("%d-%b-%Y") %></small></span></td>
         <td><button class="green-button"><%= link_to 'Show', group %></button></td>
@@ -15,6 +16,7 @@
     <% end %>
   </table>
 </div>
+<% end %>
 <div>
   <button class="bottom-green-button"><%= link_to 'New Folder', new_group_path %></button>
 </div>

@@ -20,23 +20,28 @@
 <% unless @group.expenses.empty? %>
   <div class="text-center"><h4 class="m-0">Expenses:</h4></div>
   <div class="pcon-4 pt-2">
-    <table class="white-div">
-      <% @expenses.each do |expense| %>
+    <% @expenses.each do |expense| %>
+      <table class="white-div">
         <tr>
-          <td><%= image_tag expense.folders.first.icon %></td>
-          <td><%= link_to expense.name, expense %></td>
-          <td><span><strong class="d-none d-inline-block-4">Amount:</strong> $<%= expense.amount %></span></td>
+          <td><%= image_tag expense.folders.first.icon, class: "folder-icon" %></td>
+          <td><span><%= expense.name %></span></td>
+          <td><span><strong>Amount:</strong> $<%= expense.amount %></span></td>
           <td><span><strong class="d-none d-inline-block-4">
             Created On: </strong> <small class="date"><%= expense.created_at.strftime("%d-%b-%Y") %><small></span>
           </td>
+        </tr>
+      </table>
+      <table class="white-div">
+        <tr>
+          <td><button class="green-button"><%= link_to 'View', expense %></button></td>
           <td>
             <button class="green-button">
               <%= link_to "Delete From #{@group.name}", delete_from_group_path(expense_id: expense.id, group_id: @group.id), method: :delete %>
             </button>
           </td>
         </tr>
-      <% end %>
-    </table>
+      </table>
+    <% end %>
   </div>
 <% end %>
 <div class="d-flex justify-between flex-column bottom-group">

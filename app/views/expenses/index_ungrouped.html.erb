@@ -6,18 +6,20 @@
     <span class="pr-2"><strong>Total spent: </strong>$<%= @total_spent %></span>
   </div>
 </section>
-<div class="pcon-4 pt-2">
-  <table class="white-div">
-    <% @ungrouped_expenses.each do |expense| %>
-      <tr>
-        <td><span class="pr-1"><strong><%= expense.name %></strong></span></td>
-        <td><span class="pr-1">$<%= expense.amount %></span></td>
-        <td><span class="pr-1"><small class="date"><%= expense.created_at.strftime("%d-%b-%Y") %></small></span></td>
-        <td><button class="green-button"><%= link_to 'Show', expense %></button></td>
-      </tr>
-    <% end %>
-  </table>
-</div>
+<% unless current_user.expenses.empty?%>
+  <div class="pcon-4 pt-2">
+    <table class="white-div">
+      <% @ungrouped_expenses.each do |expense| %>
+        <tr>
+          <td><span class="pr-1"><strong><%= expense.name %></strong></span></td>
+          <td><span class="pr-1">$<%= expense.amount %></span></td>
+          <td><span class="pr-1"><small class="date"><%= expense.created_at.strftime("%d-%b-%Y") %></small></span></td>
+          <td><button class="green-button"><%= link_to 'Show', expense %></button></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>
 <div>
   <button class="bottom-green-button"><%= link_to 'New Expense', new_expense_path %></button>
 </div>

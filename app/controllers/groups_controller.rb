@@ -21,6 +21,7 @@ class GroupsController < ApplicationController
   end
 
   def create
+    @icons = Icon.all.ordered_alphabetically
     @group = current_user.folders.build(group_params)
 
     if @group.save

@@ -73,8 +73,17 @@ body {
   box-shadow: $gray-shaddow;
 }
 
+.folder-icon {
+  height: 32px;
+  width: 32px;
+}
+
 .reset-width {
   width: auto;
+}
+
+.submit {
+  cursor: pointer;
 }
 
 .green-button {

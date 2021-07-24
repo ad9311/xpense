@@ -20,7 +20,7 @@
     <table class="white-div text-center">
       <% @add_to_group_list.each do |group| %>
         <tr>
-          <td><%= image_tag group.icon %></td>
+          <td><%= image_tag group.icon, class: "folder-icon" %></td>
           <td><button class="green-button"><%= link_to "Add to #{group.name}", add_to_group_path(expense_id: @expense.id, group_id: group.id) %></button></td>
         </tr>
       <% end %>
