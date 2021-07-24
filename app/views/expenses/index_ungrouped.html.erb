@@ -1,22 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<h1>My External Expenses</h1>
-
-<p>
-  <strong>Total spent:</strong>
-  <%= @total_spent %>
-</p>
-
-<% @ungrouped_expenses.each do |expense| %>
-  <div>
-    <%= expense.name %>
-    <%= expense.amount %>
-    <%= expense.created_at.strftime("%d-%b-%Y") %>
-    <%= link_to 'Show', expense %>
-    <br/>
+<section>
+  <div class="text-center blue-div">
+    <h1 class="m-0">My External Expenses</h1>
   </div>
-<% end %>
-
-<br/>
-
-<%= link_to 'New Expense', new_expense_path %>
+  <div class="white-div reset-width text-right">
+    <span class="pr-2"><strong>Total spent: </strong>$<%= @total_spent %></span>
+  </div>
+</section>
+<div class="pcon-4 pt-2">
+  <table class="white-div">
+    <% @ungrouped_expenses.each do |expense| %>
+      <tr>
+        <td><span class="pr-1"><strong><%= expense.name %></strong></span></td>
+        <td><span class="pr-1">$<%= expense.amount %></span></td>
+        <td><span class="pr-1"><small class="date"><%= expense.created_at.strftime("%d-%b-%Y") %></small></span></td>
+        <td><button class="green-button"><%= link_to 'Show', expense %></button></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<div>
+  <button class="bottom-green-button"><%= link_to 'New Expense', new_expense_path %></button>
+</div>

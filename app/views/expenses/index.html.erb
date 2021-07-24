@@ -2,14 +2,15 @@
   <div class="text-center blue-div">
     <h1 class="m-0">My Expenses</h1>
   </div>
-  <div class="text-right white-div">
-    <span><strong>Total spent: </strong>$<%= @total_spent %></span>
+  <div class="white-div reset-width text-right">
+    <span class="pr-2"><strong>Total spent: </strong>$<%= @total_spent %></span>
   </div>
 </section>
 <div class="pcon-4 pt-2">
   <table class="white-div">
     <% @grouped_expenses.each do |expense| %>
       <tr>
+        <td><%= image_tag expense.folders.first.icon %></td>
         <td><span class="pr-1"><strong><%= expense.name %></strong></span></td>
         <td><span class="pr-1">$<%= expense.amount %></span></td>
         <td><span class="pr-1"><small class="date"><%= expense.created_at.strftime("%d-%b-%Y") %></small></span></td>
@@ -18,6 +19,6 @@
     <% end %>
   </table>
 </div>
-<div class="pt-2">
+<div>
   <button class="bottom-green-button"><%= link_to 'New Expense', new_expense_path %></button>
 </div>

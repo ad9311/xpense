@@ -1,30 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @expense.name %>
-</p>
-
-<p>
-  <strong>Amount:</strong>
-  <%= @expense.amount %>
-</p>
-
-<p>
-  <strong>Date Created:</strong>
-  <%= @expense.created_at.strftime('%d-%b-%Y') %>
-</p>
-
-<div>
-  <% @add_to_group_list.each do |group| %>
-    <%= link_to "Add to #{group.name}", add_to_group_path(expense_id: @expense.id, group_id: group.id) %>
-    <br/>
-  <% end %>
+<section>
+  <div class="text-center blue-div">
+    <h1 class="m-0"><%= @expense.name %></h1>
+  </div>
+</section>
+<div class="pcon-4 pt-2">
+  <table class="white-div text-center">
+    <tr>
+      <td><span><strong>Amout: </strong>$<%= @expense.amount %></span></td>
+      <td><strong>Created On: </strong>
+        <span class="pr-1"><small class="date"><%= @expense.created_at.strftime("%d-%b-%Y") %></small></span>
+      </td>
+    </tr>
+  </table>
+  <br/>
 </div>
-
-<br/>
-
-<%= link_to 'Edit', edit_expense_path(@expense) %> |
-<%= link_to 'Delete', expense_path(@expense), method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'New Expense', new_expense_path %> |
-<%= link_to 'Back', expenses_path %>
+<div class="d-flex justify-between flex-column bottom-group">
+  <button class="bottom-green-button-unfixed"><%= link_to 'Edit', edit_expense_path(@expense) %></button>
+  <button class="bottom-green-button-unfixed"><%= link_to 'Delete', expense_path(@expense), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+  <button class="bottom-green-button-unfixed"><%= link_to 'New', new_expense_path %></button>
+</div>
+<% unless @add_to_group_list.empty? %>
+  <div class="text-center"><h4 class="m-0">Add To Group:</h4></div>
+  <div class="pcon-4 pt-2">
+    <table class="white-div text-center">
+      <% @add_to_group_list.each do |group| %>
+        <tr class="d-flex justify-around">
+          <td><%= image_tag group.icon %></td>
+          <td><button class="green-button"><%= link_to "Add to #{group.name}", add_to_group_path(expense_id: @expense.id, group_id: group.id) %></button></td>
+        </tr>
+      <% end %>
+    </table>
+  <div>
+<% end %>

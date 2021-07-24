@@ -2,6 +2,7 @@ $blue: #3778c2;
 $dark-blue: #2d5e96;
 $darker-blue: #1c4a80;
 $green: #5fb523;
+$dark-green: #579b26;
 $smoke: #434b54;
 $dark-gray: darkgray;
 $pale-gray: #f1f3f2;
@@ -60,13 +61,14 @@ body {
 }
 
 .white-div {
+  width: 100%;
   padding: 5px;
   background-color: $white;
   box-shadow: $gray-shaddow;
 }
 
-.line {
-  width: 50px;
+.reset-width {
+  width: auto;
 }
 
 .green-button {
@@ -76,6 +78,12 @@ body {
   color: $white;
 }
 
+.bottom-group {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 .bottom-green-button {
   width: 100%;
   position: fixed;
@@ -83,6 +91,17 @@ body {
   padding: 10px;
   border: none;
   background-color: $green;
+  border: 1px solid $dark-green;
+  color: $white;
+  font-size: 20px;
+}
+
+.bottom-green-button-unfixed {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: $green;
+  border: 1px solid $dark-green;
   color: $white;
   font-size: 20px;
 }
