@@ -1,7 +1,7 @@
 
 <%= form_with(model: expense) do |form| %>
   <div class="pcon-4 pt-2">
-  <table class="white-div w-100">
+  <table class="white-div">
     <tr>
       <td><%= form.label :name %></td>
       <td><%= form.text_field :name, autofocus: true %></td>
@@ -12,5 +12,5 @@
     </tr>
   </table>
   </div>
-  <%= form.submit 'Add', class: "bottom-green-button" %>
+  <%= form.submit 'Submit', class: "bottom-green-button" %>
 <% end %>

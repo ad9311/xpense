@@ -1,6 +1,6 @@
 <div class="pos-fixed top-0 topbar">
   <nav class="navbar-height d-flex justify-between align-items-center pcon-4">
-    <% unless current_user == '/users/sign_out' %>
+    <% if user_signed_in? %>
       <ul class="d-flex">
         <li class="pr-1"><%= link_to current_user.name, root_path %></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>

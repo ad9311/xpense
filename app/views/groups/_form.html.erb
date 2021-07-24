@@ -1,34 +1,24 @@
 <%= form_with(model: group) do |form| %>
-  <% if group.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
-
-      <ul>
-        <% group.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+  <div class="pcon-4 pt-2">
+    <table class="white-div">
+      <tr>
+        <td><%= form.label :name %></td>
+        <td><%= form.text_field :name, autofocus: true %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="pcon-4">
+    <div class="text-center ptb-2"><h4 class="m-0">Choose A Category:</h4></div>
+    <div class="d-flex justify-left white-div-simple">
+      <div class="d-flex flex-column justify-around p-2">
+        <%= form.collection_radio_buttons(:icon, Icon.order(:name), :icon, :name) do |b| b.label(class: "icon") { b.radio_button + b.text } end %>
+      </div>
+      <div class="d-flex flex-column justify-around p-2">
+        <% @icons.each do |icon| %>
+          <%= image_tag icon.icon %>
         <% end %>
-      </ul>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, autofocus: true %>
   </div>
-
-  <div class="field">
-    <%= form.collection_radio_buttons(:icon, Icon.order(:name), :icon, :name) do |b| 
-      b.label(class: "icon") { b.radio_button + b.text }
-    end %>
-    <br/>
-    <% @icons.each do |icon| %>
-      <%= image_tag icon.icon %>
-    <% end %>
-  </div>
-
-  <br/>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit 'Submit', class: "bottom-green-button" %>
 <% end %>

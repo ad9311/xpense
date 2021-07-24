@@ -25,11 +25,13 @@
         <tr>
           <td><%= image_tag expense.folders.first.icon %></td>
           <td><%= link_to expense.name, expense %></td>
-          <td><span><strong>Amount: </strong><%= expense.amount %></span></td>
-          <td><span><strong>Created On: </strong><%= expense.created_at.strftime("%d-%b-%Y") %></span></td>
+          <td><span><strong class="d-none d-inline-block-4">Amount:</strong> $<%= expense.amount %></span></td>
+          <td><span><strong class="d-none d-inline-block-4">
+            Created On: </strong> <small class="date"><%= expense.created_at.strftime("%d-%b-%Y") %><small></span>
+          </td>
           <td>
             <button class="green-button">
-              <%= link_to "Delete From This Folder", delete_from_group_path(expense_id: expense.id, group_id: @group.id), method: :delete %>
+              <%= link_to "Delete From #{@group.name}", delete_from_group_path(expense_id: expense.id, group_id: @group.id), method: :delete %>
             </button>
           </td>
         </tr>

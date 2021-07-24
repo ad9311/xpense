@@ -67,6 +67,12 @@ body {
   box-shadow: $gray-shaddow;
 }
 
+.white-div-simple {
+  padding: 5px;
+  background-color: $white;
+  box-shadow: $gray-shaddow;
+}
+
 .reset-width {
   width: auto;
 }

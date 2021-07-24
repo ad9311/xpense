@@ -17,6 +17,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @icons = Icon.all.ordered_alphabetically
   end
 
   def create

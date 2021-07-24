@@ -19,13 +19,13 @@
   <div class="pcon-4 pt-2">
     <table class="white-div text-center">
       <% @add_to_group_list.each do |group| %>
-        <tr class="d-flex justify-around">
+        <tr>
           <td><%= image_tag group.icon %></td>
           <td><button class="green-button"><%= link_to "Add to #{group.name}", add_to_group_path(expense_id: @expense.id, group_id: group.id) %></button></td>
         </tr>
       <% end %>
     </table>
-  <div>
+  </div>
 <% end %>
 <div class="d-flex justify-between flex-column bottom-group">
   <button class="bottom-green-button-unfixed"><%= link_to 'Edit', edit_expense_path(@expense) %></button>
