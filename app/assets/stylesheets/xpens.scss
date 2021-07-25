@@ -50,13 +50,46 @@ body {
   height: $top-bar-height;
 }
 
+.ham {
+  background-color: transparent;
+  border: none;
+  color: $white;
+  font-size: 30px;
+}
+
+nav.menu {
+  position: absolute;
+  width: 210px;
+  top: 44px;
+  left: -300px;
+  padding: 20px 0 20px 0;
+  background-color: $blue;
+  box-shadow: $blue-shaddow;
+  color: $white;
+  transition: .3s all;
+}
+
+.menu_show {
+  left: 0 !important;
+}
+
 .user-notice {
   margin-top: $top-bar-height;
   background-color: $white;
 }
 
 .top-padding {
-  padding-top: 200px;
+  padding-top: 90px;
+}
+
+.user-menu-links {
+  max-width: 190px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid $white;
 }
 
 .date {

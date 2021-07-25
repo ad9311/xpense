@@ -9,7 +9,7 @@ class Expense < ApplicationRecord
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
 
   def not_in_group
-    groups = Group.all
+    groups = Group.where(user_id: self.author_id)
     groups.where.not(id: self.folders)
   end
 

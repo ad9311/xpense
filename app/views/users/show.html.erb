@@ -2,12 +2,15 @@
   <div class="user-notice">
     <%= render 'layouts/notice_and_alerts' %>
   </div>
-  <div class="pcon-4 text-center top-padding">
+  <div class="text-center top-padding pb-3">
+    <h1>Xpens</h1>
+  </div>
+  <div class="pcon-4 text-center">
     <ul>
-      <li class="pb-1"><%= link_to "Expenses", expenses_path %></li>
-      <li class="pb-1"><%= link_to "External Expenses", external_expenses_path %></li>
-      <li class="pb-1"><%= link_to "Folders", groups_path %></li>
-      <li class="pt-3"><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+      <li class="user-menu-links"><%= image_tag "money1.png", class: "folder-icon" %><%= link_to "Expenses", expenses_path %></li>
+      <li class="user-menu-links"><%= image_tag "money2.png", class: "folder-icon" %><%= link_to "External Expenses", external_expenses_path %></li>
+      <li class="user-menu-links"><%= image_tag "folder.png", class: "folder-icon" %><%= link_to "Folders", groups_path %></li>
+      <li class="pt-6"><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
     </ul>
   </div>
 </body>

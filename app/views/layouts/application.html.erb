@@ -14,5 +14,10 @@
     <main>
       <%= yield %>
     </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script>
+      $(document).ready(function() { $("body").on('click', '.ham', function() {
+          $("nav.menu").toggleClass("menu_show");});});
+    </script>
   </body>
 </html>

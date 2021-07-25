@@ -1,23 +1,41 @@
 <div class="pos-fixed top-0 topbar">
-  <nav class="navbar-height d-flex justify-between align-items-center pcon-4">
+  <div class="navbar-height d-flex justify-between align-items-center pcon-4">
     <% if user_signed_in? %>
-      <ul class="d-flex">
-        <li class="pr-1"><%= link_to current_user.name, root_path %></li>
-        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-      </ul>
       <ul class="d-none-2">
-        <li><span>TODO</span></li>
+        <li><input class="ham" type="button" value="&#9776"></li>
+      </ul>
+      <ul>
+        <li class="pr-1 fs-2"><%= link_to current_user.name, root_path %></li>
       </ul>
       <ul class="d-none d-flex-2">
-        <li class="pr-1"><%= link_to "Expenses", expenses_path %></li>
-        <li class="pr-1"><%= link_to "External Expenses", external_expenses_path %></li>
-        <li><%= link_to "Folders", groups_path %></li>
+        <li class="plr-1"><%= link_to "Expenses", expenses_path %></li>
+        <li class="plr-1"><%= link_to "External Expenses", external_expenses_path %></li>
+        <li class="plr-1"><%= link_to "Folders", groups_path %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
       </ul>
     <% else %>
       <ul>
         <li><h1 class="fw-4">Xpens</h1></li>
       </ul> 
     <% end %>
-  </nav>
+  </div>
 </div>
+<% if user_signed_in? %>
+  <nav class="menu">
+    <ul class="d-flex flex-column">
+      <li class="plr-2 ptb-1 fs-2">
+        <button class="green-button"><%= link_to "Expenses", expenses_path %></button>
+      </li>
+      <li class="plr-2 ptb-1 fs-2">
+        <button class="green-button"><%= link_to "External Expenses", external_expenses_path %></button>
+      </li>
+      <li class="plr-2 ptb-1 fs-2">
+        <button class="green-button"><%= link_to "Folders", groups_path %></button>
+      </li>
+      <li class="plr-2 pt-5 fs-2">
+        <button class="green-button"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></button>
+      </li>
+    </ul>
+  </nav>
+<% end %>
 <div class="div-space"></div>
