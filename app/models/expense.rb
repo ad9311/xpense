@@ -9,22 +9,22 @@ class Expense < ApplicationRecord
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
 
   def my_author
-    user = User.find_by(id: self.author_id)
+    user = User.find_by(id: author_id)
     user.name
   end
 
   def not_in_group
-    groups = Group.where(user_id: self.author_id)
-    groups.where.not(id: self.folders)
+    groups = Group.where(user_id: author_id)
+    groups.where.not(id: folders)
   end
 
   def self.grouped
     grouped_expenses = GroupedExpense.select('expense_id as id')
-    self.where(id: grouped_expenses).ordered_by_most_recent
+    where(id: grouped_expenses).ordered_by_most_recent
   end
 
   def self.ungrouped
     grouped_expenses = GroupedExpense.select('expense_id as id')
-    self.where.not(id: grouped_expenses).ordered_by_most_recent
+    where.not(id: grouped_expenses).ordered_by_most_recent
   end
 end

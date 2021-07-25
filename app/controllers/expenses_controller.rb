@@ -1,7 +1,6 @@
 class ExpensesController < ApplicationController
-  before_action :set_expense, only: %i[ show edit update destroy ]
+  before_action :set_expense, only: %i[show edit update destroy]
   before_action :authenticate_user!
-
 
   def index
     @expenses = current_user.expenses
@@ -24,8 +23,7 @@ class ExpensesController < ApplicationController
     @expense = Expense.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @expense = current_user.expenses.build(expense_params)
@@ -50,11 +48,12 @@ class ExpensesController < ApplicationController
   end
 
   private
-    def set_expense
-      @expense = Expense.find(params[:id])
-    end
 
-    def expense_params
-      params.require(:expense).permit(:name, :amount)
-    end
+  def set_expense
+    @expense = Expense.find(params[:id])
+  end
+
+  def expense_params
+    params.require(:expense).permit(:name, :amount)
+  end
 end

@@ -41,7 +41,6 @@ body {
   box-shadow: $blue-shaddow;
 }
 
-
 .navbar-height {
   height: $top-bar-height;
 }
@@ -66,7 +65,7 @@ nav.menu {
   background-color: $blue;
   box-shadow: $blue-shaddow;
   color: $white;
-  transition: .3s all;
+  transition: 0.3s all;
 }
 
 .menu_show {
@@ -168,7 +167,6 @@ nav.menu {
   position: fixed;
   bottom: 0;
   padding: 10px;
-  border: none;
   background-color: $green;
   border: 1px solid $dark-green;
   color: $white;
@@ -178,7 +176,6 @@ nav.menu {
 .bottom-green-button-unfixed {
   width: 100%;
   padding: 10px;
-  border: none;
   background-color: $green;
   border: 1px solid $dark-green;
   color: $white;

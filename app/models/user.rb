@@ -9,6 +9,6 @@ class User < ApplicationRecord
   has_many :folders, class_name: 'Group', foreign_key: 'user_id'
 
   def total_spent
-    self.expenses.sum(:amount)
+    expenses.sum(:amount)
   end
 end

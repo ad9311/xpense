@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: %i[ show edit update destroy ]
+  before_action :set_group, only: %i[show edit update destroy]
   before_action :authenticate_user!
-
 
   def index
     @groups = current_user.folders.ordered_alphabetically
@@ -25,7 +24,7 @@ class GroupsController < ApplicationController
     @group = current_user.folders.build(group_params)
 
     if @group.save
-      redirect_to @group, notice: "Group created"
+      redirect_to @group, notice: 'Group created'
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +32,7 @@ class GroupsController < ApplicationController
 
   def update
     if @group.update(group_params)
-      redirect_to @group, notice: "Group updated"
+      redirect_to @group, notice: 'Group updated'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,15 +41,16 @@ class GroupsController < ApplicationController
   def destroy
     @group.expenses.destroy_all
     @group.destroy
-    redirect_to groups_url, notice: "Group deleted"
+    redirect_to groups_url, notice: 'Group deleted'
   end
 
   private
-    def set_group
-      @group = Group.find(params[:id])
-    end
 
-    def group_params
-      params.require(:group).permit(:name, :icon)
-    end
+  def set_group
+    @group = Group.find(params[:id])
+  end
+
+  def group_params
+    params.require(:group).permit(:name, :icon)
+  end
 end
