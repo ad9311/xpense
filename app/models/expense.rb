@@ -19,12 +19,12 @@ class Expense < ApplicationRecord
   end
 
   def self.grouped
-    grouped_expenses = GroupedExpense.select('expense_id as id')
+    grouped_expenses = GroupedExpense.includes(:expenses).select('expense_id as id')
     where(id: grouped_expenses).ordered_by_most_recent
   end
 
   def self.ungrouped
-    grouped_expenses = GroupedExpense.select('expense_id as id')
+    grouped_expenses = GroupedExpense.includes(:expenses).select('expense_id as id')
     where.not(id: grouped_expenses).ordered_by_most_recent
   end
 end

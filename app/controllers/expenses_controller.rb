@@ -3,13 +3,13 @@ class ExpensesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @expenses = current_user.expenses
+    @expenses = current_user.expenses.includes(:author)
     @grouped_expenses = @expenses.grouped
     @total_spent = current_user.total_spent
   end
 
   def index_ungrouped
-    @expenses = current_user.expenses
+    @expenses = current_user.expenses.includes(:author)
     @ungrouped_expenses = @expenses.ungrouped
     @total_spent = current_user.total_spent
   end

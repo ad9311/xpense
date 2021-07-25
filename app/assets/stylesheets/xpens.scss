@@ -14,11 +14,16 @@ $gray-shaddow: 1px 1px 1px $dark-gray;
 $blue-shaddow: 3px 3px 2px $darker-blue;
 $top-bar-height: 40px;
 
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./fonts/ProximaNova-Regular.otf'); }
+
 body {
   margin: 0;
   padding: 0;
   background-color: $pale-gray;
   color: $smoke;
+  font-family: 'Proxima Nova', sans-serif;
 }
 
 .user-body {

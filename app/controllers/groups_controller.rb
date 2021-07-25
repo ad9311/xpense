@@ -7,7 +7,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @expenses = Group.find(params[:id]).expenses
+    @expenses = Group.find(params[:id]).expenses.preload(:folders)
   end
 
   def new
