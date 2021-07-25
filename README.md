@@ -19,7 +19,12 @@ If no version provided you will need to install it. [Get PostgreSQL](https://www
 
 ## Getting Started
 
-To get started first clone this project by using the following command `git clone https://github.com/ad9311/xpens.git`</br>
+To get started first clone this project by using the following command 
+
+```
+git clone https://github.com/ad9311/xpens.git
+```
+
 Then change directory into the project's directory `cd xpens`</br>
 Before starting the application you will need to run a few commands:</br>
 
