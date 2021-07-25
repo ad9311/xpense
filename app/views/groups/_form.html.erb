@@ -1,4 +1,13 @@
 <%= form_with(model: group) do |form| %>
+  <% if group.errors.any? %>
+    <div id="error_explanation", class="alert">
+      <ul>
+        <% group.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="pcon-4 pt-2">
     <table class="white-div">
       <tr>
@@ -9,9 +18,9 @@
   </div>
   <div class="pcon-4 mb-6">
     <div class="text-center ptb-2"><h4 class="m-0">Choose A Category:</h4></div>
-    <div class="d-flex justify-left white-div-simple">
+    <div class="d-flex justify-around white-div-simple">
       <div class="d-flex flex-column justify-around p-2">
-        <%= form.collection_radio_buttons(:icon, Icon.order(:name), :icon, :name) do |b| b.label(class: "icon") { b.radio_button + b.text } end %>
+        <%= form.collection_radio_buttons(:icon, Icon.order(:name), :icon, :name) do |b| b.label(class: "d-flex") { b.radio_button + b.text } end %>
       </div>
       <div class="d-flex flex-column justify-around p-2">
         <% @icons.each do |icon| %>

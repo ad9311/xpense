@@ -30,7 +30,7 @@ class ExpensesController < ApplicationController
   def create
     @expense = current_user.expenses.build(expense_params)
     if @expense.save
-      redirect_to @expense, notice: 'Expense was successfully created.'
+      redirect_to @expense, notice: 'Expense created'
     else
       render :new, status: :unprocessable_entity
     end
@@ -38,7 +38,7 @@ class ExpensesController < ApplicationController
 
   def update
     if @expense.update(expense_params)
-      redirect_to @expense, notice: 'Expense was successfully updated.'
+      redirect_to @expense, notice: 'Expense updated'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -46,7 +46,7 @@ class ExpensesController < ApplicationController
 
   def destroy
     @expense.destroy
-    redirect_to expenses_url, notice: 'Expense was successfully destroyed.'
+    redirect_to expenses_url, notice: 'Expense deleted'
   end
 
   private

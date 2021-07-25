@@ -2,6 +2,7 @@
   <div class="text-center blue-div">
     <h1 class="m-0"><%= @group.name %></h1>
   </div>
+  <%= render 'layouts/notice_and_alerts'%>
   <div class="white-div reset-width text-right">
     <span class="pr-2"><strong>Expenses: </strong><%= @group.number_of_expenses %></span>
   </div>

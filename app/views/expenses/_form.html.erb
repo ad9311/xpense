@@ -1,5 +1,14 @@
 
 <%= form_with(model: expense) do |form| %>
+  <% if expense.errors.any? %>
+    <div id="error_explanation", class="alert">
+      <ul>
+        <% expense.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="pcon-4 pt-2">
   <table class="white-div">
     <tr>

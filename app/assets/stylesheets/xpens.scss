@@ -3,12 +3,16 @@ $dark-blue: #2d5e96;
 $darker-blue: #1c4a80;
 $green: #5fb523;
 $dark-green: #579b26;
+$light-green: rgba(137, 199, 137, 0.479);
 $smoke: #434b54;
 $dark-gray: darkgray;
 $pale-gray: #f1f3f2;
 $white: white;
+$red: rgba(255, 0, 0, 0.746);
+$light-red: rgba(211, 132, 132, 0.315);
 $gray-shaddow: 1px 1px 1px $dark-gray;
 $blue-shaddow: 3px 3px 2px $darker-blue;
+$top-bar-height: 40px;
 
 body {
   margin: 0;
@@ -37,12 +41,18 @@ body {
   box-shadow: $blue-shaddow;
 }
 
+
 .navbar-height {
-  height: 40px;
+  height: $top-bar-height;
 }
 
 .div-space {
-  height: 40px;
+  height: $top-bar-height;
+}
+
+.user-notice {
+  margin-top: $top-bar-height;
+  background-color: $white;
 }
 
 .top-padding {
@@ -76,6 +86,22 @@ body {
   padding: 5px;
   background-color: $white;
   box-shadow: $gray-shaddow;
+}
+
+.alert {
+  padding: 10px;
+  background-color: $light-red;
+  color: $red;
+  box-shadow: $gray-shaddow;
+  text-align: center;
+}
+
+.notice {
+  padding: 10px;
+  background-color: $light-green;
+  color: $green;
+  box-shadow: $gray-shaddow;
+  text-align: center;
 }
 
 .folder-icon {

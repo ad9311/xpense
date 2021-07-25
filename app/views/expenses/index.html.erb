@@ -2,11 +2,12 @@
   <div class="text-center blue-div">
     <h1 class="m-0">My Expenses</h1>
   </div>
+  <%= render 'layouts/notice_and_alerts'%>
   <div class="white-div reset-width text-right">
     <span class="pr-2"><strong>Total spent: </strong>$<%= @total_spent %></span>
   </div>
 </section>
-<% unless current_user.expenses.empty?%>
+<% unless @grouped_expenses.empty?%>
   <div class="pcon-4 pt-2">
     <table class="white-div">
       <% @grouped_expenses.each do |expense| %>

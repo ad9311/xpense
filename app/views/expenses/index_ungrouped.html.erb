@@ -6,7 +6,7 @@
     <span class="pr-2"><strong>Total spent: </strong>$<%= @total_spent %></span>
   </div>
 </section>
-<% unless current_user.expenses.empty?%>
+<% unless @ungrouped_expenses.empty?%>
   <div class="pcon-4 pt-2">
     <table class="white-div">
       <% @ungrouped_expenses.each do |expense| %>
