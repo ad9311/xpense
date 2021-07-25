@@ -7,10 +7,10 @@
   </div>
   <div class="pcon-4 text-center">
     <ul>
-      <li class="user-menu-links"><%= image_tag "money1.png", class: "folder-icon" %><%= link_to "Expenses", expenses_path %></li>
-      <li class="user-menu-links"><%= image_tag "money2.png", class: "folder-icon" %><%= link_to "External Expenses", external_expenses_path %></li>
-      <li class="user-menu-links"><%= image_tag "folder.png", class: "folder-icon" %><%= link_to "Folders", groups_path %></li>
-      <li class="pt-6"><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+      <li class="user-menu-links"><%= image_tag "money1.png", class: "folder-icon" %><%= link_to "Expenses", expenses_path, id: "expenses" %></li>
+      <li class="user-menu-links"><%= image_tag "money2.png", class: "folder-icon" %><%= link_to "External Expenses", external_expenses_path, id: "external_expenses" %></li>
+      <li class="user-menu-links"><%= image_tag "folder.png", class: "folder-icon" %><%= link_to "Folders", groups_path, id: "folders" %></li>
+      <li class="pt-6"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
     </ul>
   </div>
 </body>

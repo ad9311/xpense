@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
     @group = current_user.folders.build(group_params)
 
     if @group.save
-      redirect_to @group, notice: 'Group created'
+      redirect_to @group, notice: 'Folder created'
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,7 +32,7 @@ class GroupsController < ApplicationController
 
   def update
     if @group.update(group_params)
-      redirect_to @group, notice: 'Group updated'
+      redirect_to @group, notice: 'Folder updated'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -41,7 +41,7 @@ class GroupsController < ApplicationController
   def destroy
     @group.expenses.destroy_all
     @group.destroy
-    redirect_to groups_url, notice: 'Group deleted'
+    redirect_to groups_url, notice: 'Folder deleted'
   end
 
   private
