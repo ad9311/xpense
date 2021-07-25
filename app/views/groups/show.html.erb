@@ -40,6 +40,7 @@
               <%= link_to "Delete From #{@group.name}", delete_from_group_path(expense_id: expense.id, group_id: @group.id), method: :delete %>
             </button>
           </td>
+          <td><span><strong>Created By: </strong> <%= expense.my_author %></span></td>
         </tr>
       </table>
     <% end %>
