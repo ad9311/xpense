@@ -74,6 +74,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
+- Special thanks and credits to [Gregoire Vella](https://www.behance.net/gregoirevella) for inspiring this project. Check out his project [Snapscan](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
 - [Microverse](https://www.microverse.org/) for international opportunities.
 - Special thanks to all code reviewers.
 
