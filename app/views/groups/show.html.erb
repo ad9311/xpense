@@ -24,8 +24,8 @@
     <table class="white-div">
         <tr>
           <th class="fs-2">Name:</th>
-          <th class="fs-2">Author:</th>
           <th class="fs-2">Amount:</th>
+          <th class="fs-2">Creation Date:</th>
         </tr>
         <% @expenses.order(created_at: :desc).each do |expense| %>
         <tr>
