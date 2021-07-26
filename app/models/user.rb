@@ -9,6 +9,6 @@ class User < ApplicationRecord
   has_many :folders, class_name: 'Group', foreign_key: 'user_id'
 
   def total_spent
-    expenses.map(&:amount).inject(:+).round(2)
+    expenses.map(&:amount).inject(:+).round(2) unless expenses.empty?
   end
 end
