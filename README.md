@@ -12,10 +12,11 @@ Xpens is an educational project for Microverse using Ruby on Rails.
 
 ### Prerequisites
 
-This web app uses ruby 3.0.1. Make sure you are using the correct version. `rvm use 3.0.1`</br>
+- This web app uses ruby 3.0.1. Make sure you are using the correct version. `rvm use 3.0.1`</br>
 Then check your currently ruby version with `ruby --version`</br>
-PostgreSQL should be installed previously. Make sure that it is install by entering the following command on the terminal `postgres --version`</br>
-If no version is provided you will need to install it. [Get PostgreSQL](https://www.postgresql.org/download/).
+- PostgreSQL should be installed previously. Make sure that it is install by entering the following command on the terminal `postgres --version`</br>
+If no version is provided you will need to install it. [Get PostgreSQL](https://www.postgresql.org/download/).</br>
+- Javascript package manager [npm](https://docs.npmjs.com/getting-started). Again, make sure it is installed. Run `npm --version`
 
 ## Getting Started
 
@@ -41,7 +42,9 @@ rails db:setup
 **Note:** This app uses a seed (seeds.rb) file so it is important to run `rails db:setup` instead of `rails db:migate`</br>
 Failing to do so will have the app not work correctly.</br>
 
-This command will correctly set up the database.
+This command will correctly set up the database.</br>
+
+Lastly, run `npm install` necessary for Rspec
 
 Now access the project with `rails s` to launch the server and then follow the link http://127.0.0.1:3000 to open it in the browser.</br>
 
