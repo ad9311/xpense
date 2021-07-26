@@ -44,7 +44,7 @@ Failing to do so will have the app not work correctly.</br>
 
 This command will correctly set up the database.</br>
 
-Lastly, run `npm install` necessary for Rspec
+Lastly, run `npm install` necessary for Rspec.
 
 Now access the project with `rails s` to launch the server and then follow the link http://127.0.0.1:3000 to open it in the browser.</br>
 
