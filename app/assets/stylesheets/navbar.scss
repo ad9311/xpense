@@ -1,0 +1,22 @@
+@import './variables';
+
+.topbar {
+  width: 100%;
+  background-color: $blue;
+  color: $white;
+}
+
+.topbar-user {
+  width: 100%;
+  background-color: $dark-blue;
+  color: $white;
+  box-shadow: $blue-shaddow;
+}
+
+.navbar-height {
+  height: $top-bar-height;
+}
+
+.top-padding {
+  padding-top: 90px;
+}

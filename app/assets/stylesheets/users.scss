@@ -1,0 +1,18 @@
+@import './variables';
+
+.user-body {
+  margin: 0;
+  padding: 0;
+  background-color: $blue;
+  color: $white;
+}
+
+.user-menu-links {
+  max-width: 190px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid $white;
+}

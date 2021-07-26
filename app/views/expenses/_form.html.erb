@@ -19,6 +19,10 @@
       <td><%= form.label :amount %></td>
       <td><%= form.text_field :amount %></td>
     </tr>
+    <tr>
+      <td><%= form.label :description %></td>
+      <td><%= form.text_area :description, rows: "4", cols: "27" %></td>
+    </tr>
   </table>
   </div>
   <%= form.submit 'Submit', class: "bottom-green-button submit" %>

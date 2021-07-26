@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_07_23_205345) do
     t.integer "author_id"
     t.string "name"
     t.float "amount"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,0 +1,34 @@
+@import './variables';
+
+.green-button {
+  padding: 5px 10px;
+  border: none;
+  background-color: $green;
+  color: $white;
+}
+
+.bottom-group {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.bottom-green-button {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  background-color: $green;
+  border: 1px solid $dark-green;
+  color: $white;
+  font-size: 20px;
+}
+
+.bottom-green-button-unfixed {
+  width: 100%;
+  padding: 10px;
+  background-color: $green;
+  border: 1px solid $dark-green;
+  color: $white;
+  font-size: 20px;
+}

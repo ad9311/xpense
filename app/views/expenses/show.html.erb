@@ -7,17 +7,21 @@
 <div class="pcon-4 pt-2">
   <table class="white-div text-center">
     <tr>
-      <td><span><strong>Amout: </strong>$<%= @expense.amount %></span></td>
-      <td><strong>Created On: </strong>
-        <span class="pr-1"><small class="date"><%= @expense.created_at.strftime("%d-%b-%Y") %></small></span>
-      </td>
+      <th><span><strong>Amout:</strong></span></th>
+      <th><span><strong>Description:</strong></span></th>
+      <th><span><strong>Created On:</strong></span></th>
+    </tr>
+    <tr>
+      <td><span>$<%= @expense.amount %></span></td>
+      <td><p class="m-0"><small class="date"><%= @expense.description %></small></p></td>
+      <td><span class="pr-1"><small class="date"><%= @expense.created_at.strftime("%d-%b-%Y") %></small></span></td>
     </tr>
   </table>
   <br/>
 </div>
 <% unless @add_to_group_list.empty? %>
   <div class="text-center"><h4 class="m-0">Add To Group:</h4></div>
-  <div class="pcon-4 pt-2">
+  <div class="pcon-4 pt-2 bottom-padding-3">
     <table class="white-div text-center">
       <% @add_to_group_list.each do |group| %>
         <tr>

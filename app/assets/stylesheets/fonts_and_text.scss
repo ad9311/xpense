@@ -1,0 +1,14 @@
+@import './variables';
+
+textarea {
+  resize: none;
+}
+
+.date {
+  color: $dark-gray;
+}
+
+.super-small {
+  font-size: 10px;
+  color: $dark-gray;
+}

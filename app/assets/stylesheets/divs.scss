@@ -1,0 +1,46 @@
+@import './variables';
+
+.div-space {
+  height: $top-bar-height;
+}
+
+.blue-div {
+  padding: 20px 0 20px 0;
+  background-color: $blue;
+  color: $white;
+  box-shadow: $blue-shaddow;
+}
+
+.white-div {
+  width: 100%;
+  padding: 5px;
+  background-color: $white;
+  box-shadow: $gray-shaddow;
+}
+
+.white-div-simple {
+  padding: 5px;
+  background-color: $white;
+  box-shadow: $gray-shaddow;
+}
+
+.user-notice {
+  margin-top: $top-bar-height;
+  background-color: $white;
+}
+
+.alert {
+  padding: 10px;
+  background-color: $light-red;
+  color: $red;
+  box-shadow: $gray-shaddow;
+  text-align: center;
+}
+
+.notice {
+  padding: 10px;
+  background-color: $light-green;
+  color: $green;
+  box-shadow: $gray-shaddow;
+  text-align: center;
+}
