@@ -12,7 +12,7 @@
       <th><span><strong>Created On:</strong></span></th>
     </tr>
     <tr>
-      <td><span>$<%= @expense.amount %></span></td>
+      <td><span>$<%= @expense.amount.round(2) %></span></td>
       <td><p class="m-0"><small class="date"><%= @expense.description %></small></p></td>
       <td><span class="pr-1"><small class="date"><%= @expense.created_at.strftime("%d-%b-%Y") %></small></span></td>
     </tr>
