@@ -2,8 +2,8 @@
 
 # Xpens - Ruby on Rails Capstone Project
 
-Xpens is an web application that allows you to keep track of all your expenses and categorize them into folders.</br>
-This is an educational project for Microverse using Ruby on Rails.
+Xpens is a web application that allows you to save all your expenses and categorize them into folders.</br>
+Xpens is an educational project for Microverse using Ruby on Rails.
 
 ## Built With
 
@@ -13,20 +13,20 @@ This is an educational project for Microverse using Ruby on Rails.
 ### Prerequisites
 
 This web app uses ruby 3.0.1. Make sure you are using the correct version. `rvm use 3.0.1`</br>
-Then check ruby version `ruby --version`</br>
-PostgreSQL should be installed before using this. Make sure that it is install by entering the following command on the terminal `postgres --version`</br>
-If no version provided you will need to install it. [Get PostgreSQL](https://www.postgresql.org/download/).
+Then check your currently ruby version with `ruby --version`</br>
+PostgreSQL should be installed previously. Make sure that it is install by entering the following command on the terminal `postgres --version`</br>
+If no version is provided you will need to install it. [Get PostgreSQL](https://www.postgresql.org/download/).
 
 ## Getting Started
 
-To get started first clone this project by using the following command 
+To get started, first, clone this project by using the following command:
 
 ```
 git clone https://github.com/ad9311/xpens.git
 ```
 
-Then change directory into the project's directory `cd xpens`</br>
-Before starting the application you will need to run a few commands:</br>
+Then change directory into the root folder `cd xpens`</br>
+Before launching the application, you will need to run a few commands:</br>
 
 ```
 bundle install
@@ -39,24 +39,24 @@ rails db:create
 rails db:setup
 ```
 **Note:** This app uses a seed (seeds.rb) file so it is important to run `rails db:setup` instead of `rails db:migate`</br>
-Failing to do so will have thi app to not work properly.</br>
+Failing to do so will have the app not work correctly.</br>
 
-After this the database should correctly set up.
+This command will correctly set up the database.
 
 Now access the project with `rails s` to launch the server and then follow the link http://127.0.0.1:3000 to open it in the browser.</br>
 
 Since no user is registered when launching the app for the first time, you must click sign up and create a new account.</br>
-Once done this the user's home page will be presented with four links.</br>
+After login, the user can access three main links.</br>
 
 <img src="./docs/images/home_page.png" alt="user_home" width="200"/>
 <img src="./docs/images/expenses.png" alt="expenses" width="200"/>
 <img src="./docs/images/folders.png" alt="folders" width="200"/>
 
-My Expenses shows all expenses that are part of at least one folder.</br>
-My External Expenses shows all expenses that are not part of any folder.</br>
-And finally My Folders show all the folders created by the currently logged-in user. Opening a folder will show you all of its expenses.</br>
+Expenses shows link all expenses that are part of at least one folder.</br>
+External Expenses link shows all expenses that are not part of any folder.</br>
+And finally Folders link show all the folders created by the currently logged-in user. Opening a folder will show you all of its expenses.</br>
 
-Expenses can be assigned to multiple folers.
+Expenses can be part of multiple folders.
 
 ## Live Version
 
