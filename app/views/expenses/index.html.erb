@@ -14,7 +14,7 @@
         <tr>
           <td><%= image_tag expense.folders.first.icon, class: "folder-icon" %></td>
           <td><span class="pr-1"><strong><%= expense.name %></strong></span></td>
-          <td><span class="pr-1">$<%= expense.amount %></span></td>
+          <td><span class="pr-1">$<%= expense.amount.round(2) %></span></td>
           <td><span class="pr-1"><small class="date"><%= expense.created_at.strftime("%d-%b-%Y") %></small></span></td>
           <td><button class="green-button"><%= link_to 'View', expense %></button></td>
         </tr>

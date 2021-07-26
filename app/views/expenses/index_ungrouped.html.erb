@@ -12,7 +12,7 @@
       <% @ungrouped_expenses.each do |expense| %>
         <tr>
           <td><span class="pr-1"><strong><%= expense.name %></strong></span></td>
-          <td><span class="pr-1">$<%= expense.amount %></span></td>
+          <td><span class="pr-1">$<%= expense.amount.round(2) %></span></td>
           <td><span class="pr-1"><small class="date"><%= expense.created_at.strftime("%d-%b-%Y") %></small></span></td>
           <td><button class="green-button"><%= link_to 'Show', expense %></button></td>
         </tr>
