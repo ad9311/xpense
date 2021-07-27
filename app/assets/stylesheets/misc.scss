@@ -1,0 +1,22 @@
+@import './variables';
+
+.folder-icon {
+  height: 32px;
+  width: 32px;
+}
+
+.reset-width {
+  width: auto;
+}
+
+.submit {
+  cursor: pointer;
+}
+
+.bottom-padding {
+  padding-bottom: $bottom-padding;
+}
+
+.bottom-padding-3 {
+  padding-bottom: $bottom-padding * 2.5;
+}

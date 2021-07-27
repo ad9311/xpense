@@ -1,0 +1,14 @@
+@import './variables';
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./fonts/ProximaNova-Regular.otf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $pale-gray;
+  color: $smoke;
+  font-family: 'Proxima Nova', sans-serif;
+}

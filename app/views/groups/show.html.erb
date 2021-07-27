@@ -1,0 +1,53 @@
+<section>
+  <div class="text-center blue-div">
+    <h1 class="m-0"><%= @group.name %></h1>
+  </div>
+  <%= render 'layouts/notice_and_alerts'%>
+  <div class="white-div reset-width text-right">
+    <span class="pr-2"><strong>Expenses: </strong><%= @group.number_of_expenses %></span>
+  </div>
+</section>
+<div class="pcon-4 pt-2">
+  <table class="white-div">
+    <tr>
+      <td><%= image_tag @group.icon %></td>
+      <td><strong>Created On: </strong>
+        <span class="pr-1"><small class="date"><%= @group.created_at.strftime("%d-%b-%Y") %></small></span>
+      </td>
+    </tr>
+  </table>
+  <br/>
+</div>
+<% unless @group.expenses.empty? %>
+  <div class="text-center"><h4 class="m-0">Expenses:</h4></div>
+  <div class="pcon-4 pt-2 bottom-padding-3">
+    <table class="white-div">
+        <tr>
+          <th class="fs-2">Name:</th>
+          <th class="fs-2">Amount:</th>
+          <th class="fs-2">Creation Date:</th>
+        </tr>
+        <% @expenses.order(created_at: :desc).each do |expense| %>
+        <tr>
+          <th><span class="pl-2"><%= expense.name %></span></th>
+          <th><span>$<%= expense.amount.round(2) %></span></th>
+          <th><span><small class="date"><%= expense.created_at.strftime("%d-%b-%Y") %><small></span></th>
+        </tr>
+        <tr>
+          <th class="d-flex justify-around align-items-center pb-2"><%= image_tag expense.folders.first.icon, class: "folder-icon" %><span class="date fs-1"><strong>By: </strong><%= expense.my_author %></span></th>
+          <th class="pb-2"><button class="green-button"><%= link_to 'View', expense %></button></th>
+          <th class="pb-2">
+            <button class="green-button">
+              <%= link_to 'Remove', delete_from_group_path(expense_id: expense.id, group_id: @group.id), method: :delete %>
+            </button>
+          </th>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% end %>
+<div class="d-flex justify-between flex-column bottom-group">
+  <button class="bottom-green-button-unfixed"><%= link_to 'Edit', edit_group_path(@group) %></button>
+  <button class="bottom-green-button-unfixed"><%= link_to 'Delete', group_path(@group), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+  <button class="bottom-green-button-unfixed"><%= link_to 'New', new_group_path %></button>
+</div>
