@@ -14,7 +14,7 @@ Xpens is an educational project for Microverse using Ruby on Rails.
 
 - This web app uses ruby 3.0.1. Make sure you are using the correct version. `rvm use 3.0.1`</br>
 Then check your currently ruby version with `ruby --version`</br>
-- PostgreSQL should be installed previously. Make sure that it is install by entering the following command on the terminal `postgres --version`</br>
+- PostgreSQL should be installed previously. Make sure that it is installed by entering the following command on the terminal `postgres --version`</br>
 If no version is provided you will need to install it. [Get PostgreSQL](https://www.postgresql.org/download/).</br>
 - Javascript package manager [npm](https://docs.npmjs.com/getting-started). Again, make sure it is installed. Run `npm --version`
 
@@ -55,9 +55,9 @@ After login, the user can access three main links.</br>
 <img src="./docs/images/expenses.png" alt="expenses" width="200"/>
 <img src="./docs/images/folders.png" alt="folders" width="200"/>
 
-Expenses shows link all expenses that are part of at least one folder.</br>
+Expenses link shows all expenses that are part of at least one folder.</br>
 External Expenses link shows all expenses that are not part of any folder.</br>
-And finally Folders link show all the folders created by the currently logged-in user. Opening a folder will show you all of its expenses.</br>
+And finally Folders link shows all the folders created by the currently logged-in user. Opening a folder will show you all of its expenses.</br>
 
 Expenses can be part of multiple folders.
 
@@ -65,9 +65,13 @@ Expenses can be part of multiple folders.
 
 There is a live version available in [xpens-app](https://xpens-app.herokuapp.com/)
 
+## Rspec
+
+To 
+
 ### Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues and, feature requests are welcome!
 
 You can do it on [issues page](https://github.com/ad9311/xpens/issues).
 
