@@ -65,10 +65,6 @@ Expenses can be part of multiple folders.
 
 There is a live version available in [xpens-app](https://xpens-app.herokuapp.com/)
 
-## Rspec
-
-To 
-
 ### Contributing
 
 Contributions, issues and, feature requests are welcome!
