@@ -30,6 +30,7 @@
 
 /public/packs
 /public/packs-test
+package-lock.json
 /node_modules
 /yarn-error.log
 yarn-debug.log*
@@ -37,3 +38,10 @@ yarn-debug.log*
 
 # Ignore local tests
 /localtest/
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
