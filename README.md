@@ -17,6 +17,7 @@ Then check your currently ruby version with `ruby --version`</br>
 - PostgreSQL should be installed previously. Make sure that it is installed by entering the following command on the terminal `postgres --version`</br>
 If no version is provided you will need to install it. [Get PostgreSQL](https://www.postgresql.org/download/).</br>
 - Javascript package manager [npm](https://docs.npmjs.com/getting-started). Again, make sure it is installed. Run `npm --version`
+- [Yarn](https://classic.yarnpkg.com/en/docs/install#debian-stable), run `npm install -g yarn` to install it. **It needs to be installed globally. Make sure it is in your path environment.**
 
 ## Getting Started
 
@@ -28,6 +29,10 @@ git clone https://github.com/ad9311/xpens.git
 
 Then change directory into the root folder `cd xpens`</br>
 Before launching the application, you will need to run a few commands:</br>
+
+```
+npm install
+```
 
 ```
 bundle install
