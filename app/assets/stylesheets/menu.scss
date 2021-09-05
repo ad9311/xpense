@@ -8,9 +8,9 @@
 }
 
 nav.menu {
-  position: absolute;
+  position: fixed;
   width: 12rem;
-  top: 2.75rem;
+  top: 2rem;
   left: -18.75rem;
   padding: 1.25rem 0 1.25rem 0;
   background-color: $blue;
