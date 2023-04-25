@@ -1,7 +1,7 @@
 <%= form_for Transaction.new do |f| %>
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_field :description, placeholder: "Description" %>
+    <%= f.text_area :description, placeholder: "Description" %>
   </div>
   <div class="field">
     <%= f.label :value %>
@@ -12,6 +12,6 @@
     <%= f.select :category, options_for_select(format_enum(Transaction.categories), nil) %>
   </div>
   <div class="submit">
-    <%= f.submit "Create Post" %>
+    <%= f.submit "Add expense" %>
   </div>
 <% end %>

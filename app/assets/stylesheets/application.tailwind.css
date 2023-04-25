@@ -10,6 +10,20 @@ body {
   @apply text-slate-700;
 }
 
+table th {
+  @apply
+  sm:text-xl
+  text-start
+  text-blue-700;
+}
+
+table td {
+  @apply
+  pt-1
+  text-sm
+  sm:text-base;
+}
+
 .field {
   @apply
   mb-3;
@@ -24,7 +38,34 @@ body {
 
 .field > input[type="email"],
 .field > input[type="text"],
-.field > input[type="password"] {
+.field > input[type="password"],
+.field > input[type="number"] {
+  @apply
+  w-full
+  px-3
+  py-1
+  rounded-md
+  focus:outline
+  outline-offset-0
+  outline-1
+  outline-teal-700;
+}
+
+.field > textarea {
+  @apply
+  w-full
+  h-20
+  px-3
+  py-1
+  rounded-md
+  focus:outline
+  outline-offset-0
+  outline-1
+  outline-teal-700
+  resize-none;
+}
+
+.field > select {
   @apply
   w-full
   px-3
@@ -74,4 +115,14 @@ body {
 
 .trans {
   @apply transition-all duration-300;
+}
+
+.expense {
+  @apply
+  text-pink-600;
+}
+
+.income {
+  @apply
+  text-green-500;
 }

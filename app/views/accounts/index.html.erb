@@ -1,6 +1,6 @@
-<div>
-  <table>
-    <thead>
+<div class="container max-h-96 sm:max-h-[30rem] overflow-y-scroll px-3 sm:px-0 mx-auto my-12">
+  <table class="w-full">
+    <thead class="sticky top-0 bg-neutral-100">
       <tr>
         <th>Description</th>
         <th>Value</th>
@@ -10,16 +10,20 @@
     <tbody>
     <% @transactions.each do |transaction| %>
       <tr>
-        <td><%= transaction.description %></td>
+        <td class="max-w-0 sm:max-w-sm truncate"><%= transaction.description %></td>
         <% if transaction.expense? %>
-          <td><%= format_value transaction.value %></td>
+          <td class="expense"><%= format_value transaction.value %></td>
         <% else %>
-          <td><%= format_value transaction.value %></td>
+          <td class="income"><%= format_value transaction.value %></td>
         <% end %>
         <td><%= transaction.created_at.strftime("%b %d, %Y") %></td>
       </tr>
     <% end %>
     </tbody>
   </table>
-  <%= render "transactions/form" %>
+</div>
+<div class="container mx-auto">
+  <div class="px-3 sm:px-0 sm:max-w-xs">
+    <%= render "transactions/form" %>
+  </div>
 </div>

@@ -1,0 +1,16 @@
+<div class="container mx-auto flex items-center justify-between">
+  <p>
+    <strong><%= current_user.full_name %></strong>
+  </p>
+  <div class="w-fit px-3 rounded-md bg-white">
+  <% if @balance.positive? %>
+    <p class="text-green-500">
+      <strong><%= format_value @balance %></strong>
+    </p>
+  <% else %>
+    <p class="text-pink-600">
+      <strong><%= format_value @balance %></strong>
+    </p>
+  <% end %>
+  </div>
+</div>
