@@ -29,7 +29,7 @@ class Transaction < ApplicationRecord
   private
 
   def sign_value
-    self.value = -self.value if self.expense?
+    self.value = -value if expense?
   end
 
   def update_account_balance

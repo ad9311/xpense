@@ -6,6 +6,72 @@ html {
   @apply bg-neutral-100;
 }
 
+body {
+  @apply text-slate-700;
+}
+
+.field {
+  @apply
+  mb-3;
+}
+
+.field > label {
+  @apply
+  text-sm
+  text-neutral-500
+  italic;
+}
+
+.field > input[type="email"],
+.field > input[type="text"],
+.field > input[type="password"] {
+  @apply
+  w-full
+  px-3
+  py-1
+  rounded-md
+  focus:outline
+  outline-offset-0
+  outline-1
+  outline-teal-700;
+}
+
+.field > input[type="checkbox"] {
+  @apply
+  text-teal-700
+  focus:outline
+  outline-offset-0
+  outline-teal-700;
+}
+
+.submit {
+  @apply
+  flex
+  justify-end
+  mt-10;
+}
+
+.submit > input[type="submit"] {
+  @apply
+  px-3
+  py-1
+  rounded-md
+  text-white
+  bg-teal-600
+  cursor-pointer
+  hover:bg-teal-700
+  trans;
+}
+
+.links > li {
+  @apply
+  italic
+  text-blue-400
+  font-semibold
+  hover:text-blue-600
+  trans;
+}
+
 .trans {
   @apply transition-all duration-300;
 }
