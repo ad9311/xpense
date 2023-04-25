@@ -1,0 +1,7 @@
+<div>
+  <h1>Xpense</h1>
+  <% if user_signed_in? %>
+    <p>Welcome <%= current_user.full_name %></p>
+    <span>Your balance is: <%= @balance %></span>
+  <% end %>
+</div>
