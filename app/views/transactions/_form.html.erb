@@ -1,3 +1,4 @@
+<h3 class="mb-3 text-xl text-blue-700 font-bold">Add a transaction<h3>
 <%= form_for Transaction.new do |f| %>
   <div class="field">
     <%= f.label :description %>
@@ -12,6 +13,6 @@
     <%= f.select :category, options_for_select(format_enum(Transaction.categories), nil) %>
   </div>
   <div class="submit">
-    <%= f.submit "Add expense" %>
+    <%= f.submit "Add" %>
   </div>
 <% end %>

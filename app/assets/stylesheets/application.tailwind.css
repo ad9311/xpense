@@ -12,9 +12,25 @@ body {
 
 table th {
   @apply
+  pl-1
+  sm:pl-2
   sm:text-xl
   text-start
   text-blue-700;
+}
+
+table td {
+  @apply
+  pl-1
+  sm:pl-2;
+}
+
+tbody > tr:nth-child(even) {
+  @apply bg-neutral-200;
+}
+
+tbody > tr:nth-child(odd) {
+  @apply bg-neutral-50;
 }
 
 table td {
