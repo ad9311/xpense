@@ -11,8 +11,12 @@
     <% @transactions.each do |transaction| %>
       <tr>
         <td><%= transaction.description %></td>
-        <td><%= transaction.value %></td>
-        <td><%= transaction.created_at.strftime("%Y %B %d") %></td>
+        <% if transaction.expense? %>
+          <td><%= format_value transaction.value %></td>
+        <% else %>
+          <td><%= format_value transaction.value %></td>
+        <% end %>
+        <td><%= transaction.created_at.strftime("%b %d, %Y") %></td>
       </tr>
     <% end %>
     </tbody>

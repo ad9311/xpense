@@ -1,8 +1,16 @@
 <div>
-  <h1>Xpense</h1>
+  <h1 class="font-bold">Xpense</h1>
   <% if user_signed_in? %>
-    <p>Welcome <%= current_user.full_name %></p>
-    <span>Your balance is: <%= @balance %></span>
+    <p>Welcome
+      <strong>
+        <%= current_user.full_name %>
+      </strong>
+    </p>
+    <span>Your balance is:
+      <strong>
+        <%= format_value @balance %>
+      </strong>
+    </span>
     <%= button_to "Sign out",  destroy_user_session_path, method: :delete %>
   <% end %>
 </div>

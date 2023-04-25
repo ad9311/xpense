@@ -20,18 +20,20 @@
 #
 class Transaction < ApplicationRecord
   belongs_to :account
+
+  before_create :sign_value
   after_create :update_account_balance
 
   enum category: { expense: 0, income: 1 }
 
   private
 
+  def sign_value
+    self.value = -self.value if self.expense?
+  end
+
   def update_account_balance
     balance = account.balance
-    if expense?
-      account.update(balance: balance - value)
-    else
-      account.update(balance: balance + value)
-    end
+    account.update(balance: balance + value)
   end
 end

@@ -1,15 +1,17 @@
 <%= form_for Transaction.new do |f| %>
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, placeholder: "Description" %>
   </div>
   <div class="field">
     <%= f.label :value %>
-    <%= f.number_field :value %>
+    <%= f.number_field :value, placeholder: 'Value', min: 0, step: 0.01 %>
   </div>
   <div class="field">
     <%= f.label :category %>
-    <%= f.text_field :category %>
+    <%= f.select :category, options_for_select(format_enum(Transaction.categories), nil) %>
   </div>
-  <%= f.submit "Create Post" %>
+  <div class="submit">
+    <%= f.submit "Create Post" %>
+  </div>
 <% end %>
