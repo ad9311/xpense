@@ -3,5 +3,6 @@
   <% if user_signed_in? %>
     <p>Welcome <%= current_user.full_name %></p>
     <span>Your balance is: <%= @balance %></span>
+    <%= button_to "Sign out",  destroy_user_session_path, method: :delete %>
   <% end %>
 </div>

@@ -1,0 +1,15 @@
+<%= form_for Transaction.new do |f| %>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :value %>
+    <%= f.number_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+  </div>
+  <%= f.submit "Create Post" %>
+<% end %>

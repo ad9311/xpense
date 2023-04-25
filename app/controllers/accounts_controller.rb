@@ -1,5 +1,13 @@
 class AccountsController < ApplicationController
+  before_action :set_account, only: %i[index]
   def index
-    @balance = current_user.account.balance
+    @transactions = @account.transactions
+    @balance = @account.balance
+  end
+
+  private
+
+  def set_account
+    @account = current_user.account
   end
 end

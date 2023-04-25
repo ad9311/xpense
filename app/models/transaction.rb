@@ -20,4 +20,18 @@
 #
 class Transaction < ApplicationRecord
   belongs_to :account
+  after_create :update_account_balance
+
+  enum category: { expense: 0, income: 1 }
+
+  private
+
+  def update_account_balance
+    balance = account.balance
+    if expense?
+      account.update(balance: balance - value)
+    else
+      account.update(balance: balance + value)
+    end
+  end
 end

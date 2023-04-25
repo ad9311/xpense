@@ -1,2 +1,21 @@
 <div>
+  <table>
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Value</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.description %></td>
+        <td><%= transaction.value %></td>
+        <td><%= transaction.created_at.strftime("%Y %B %d") %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= render "transactions/form" %>
 </div>
