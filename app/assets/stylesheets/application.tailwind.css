@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  @apply bg-neutral-100;
+}
+
+.trans {
+  @apply transition-all duration-300;
+}
