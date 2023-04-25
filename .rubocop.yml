@@ -13,6 +13,10 @@ AllCops:
   DisplayCopNames: true
   TargetRubyVersion: '3.2.2'
 
+Metrics/BlockLength:
+  Exclude:
+    - "lib/tasks/auto_annotate_models.rake"
+
 Style/Documentation:
   Enabled: false
 Style/FrozenStringLiteralComment:
