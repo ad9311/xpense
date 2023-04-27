@@ -1,4 +1,10 @@
-<div class="container max-h-96 sm:max-h-[30rem] overflow-y-scroll px-3 sm:px-0 mx-auto mt-12">
+<div class="container mt-12 mx-auto px-3 sm:px-0">
+  <div class="mb-3 flex justify-between">
+    <h3 class="text-xl text-blue-700 font-bold">Transactions</h3>
+    <%= render "transactions/destroy_all" %>
+  </div>
+</div>
+<div class="container max-h-96 sm:max-h-[30rem] overflow-y-auto px-3 sm:px-0 mx-auto">
   <table class="w-full">
     <thead class="sticky top-0 bg-neutral-100">
       <tr>

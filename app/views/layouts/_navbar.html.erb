@@ -2,9 +2,9 @@
   <% if user_signed_in? %>
     <div class="container mx-auto mb-3 flex items-center justify-between">
       <%= link_to root_path do %>
-        <h1 class="text-2xl font-bold">Xpense</h1>      
+        <h1 class="text-2xl font-bold">Xpense</h1>
       <% end %>
-      <% className = "px-2 py-1 text-xs font-bold rounded-md bg-rose-600 hover:bg-rose-600 trans" %>
+      <% className = "px-2 py-1 text-xs font-bold rounded-md bg-rose-600 hover:bg-rose-700 trans" %>
       <%= button_to "Sign out",  destroy_user_session_path, method: :delete, class: className %>
     </div>
     <%= render "layouts/name_and_balance" %>

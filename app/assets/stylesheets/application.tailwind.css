@@ -14,9 +14,8 @@ table th {
   @apply
   pl-1
   sm:pl-2
-  sm:text-xl
   text-start
-  text-blue-700;
+  text-neutral-400;
 }
 
 table td {
