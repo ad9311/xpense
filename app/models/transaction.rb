@@ -22,7 +22,8 @@ class Transaction < ApplicationRecord
   belongs_to :account
 
   before_create :sign_value
-  after_create :update_account_balance
+  after_create :update_balance_on_add
+  before_destroy :update_balance_on_remove
 
   enum category: { expense: 0, income: 1 }
 
@@ -32,8 +33,13 @@ class Transaction < ApplicationRecord
     self.value = -value if expense?
   end
 
-  def update_account_balance
+  def update_balance_on_add
     balance = account.balance
     account.update(balance: balance + value)
+  end
+
+  def update_balance_on_remove
+    balance = account.balance
+    account.update(balance: balance - value)
   end
 end

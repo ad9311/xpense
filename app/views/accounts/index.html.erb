@@ -1,7 +1,8 @@
+<% className = "px-3 py-1 text-xs font-bold text-white rounded-md bg-rose-600 hover:bg-rose-700 trans cursor-pointer" %>
 <div class="container mt-12 mx-auto px-3 sm:px-0">
   <div class="mb-3 flex justify-between">
     <h3 class="text-xl text-blue-700 font-bold">Transactions</h3>
-    <%= render "transactions/destroy_all" %>
+    <%= render "transactions/destroy_all", className: %>
   </div>
 </div>
 <div class="container max-h-96 sm:max-h-[30rem] overflow-y-auto px-3 sm:px-0 mx-auto">
@@ -22,11 +23,17 @@
         <% else %>
           <td class="income"><%= format_value transaction.value %></td>
         <% end %>
-        <td><%= transaction.created_at.strftime("%b %d, %Y") %></td>
+        <td class="py-1">
+          <div class="flex items-center">
+            <span class="pr-3"><%= transaction.created_at.strftime("%b %d, %Y") %></span>
+            <%= render "transactions/destroy", transaction:, className: %>
+          </div>
+        </td>
       </tr>
     <% end %>
     </tbody>
   </table>
+  <div class="mt-10 p-1 bg-white rounded-md"><%= render "transactions/total_transactions" %></div>
 </div>
 <hr class="container my-10 mx-auto" />
 <div class="container mx-auto">

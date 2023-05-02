@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  # Accounts
   resources :accounts, only: %i[index]
-  resources :transactions, only: %i[create]
+
+  # Transactions
   delete 'transactions/destroy_all', to: 'transactions#destroy_all'
+  resources :transactions, only: %i[create destroy]
 end
