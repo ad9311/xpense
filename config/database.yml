@@ -83,4 +83,4 @@ production:
   <<: *default
   database: xpense_production
   username: xpense
-  password: <%= ENV["EXPENSE_DATABASE_PASSWORD"] %>
+  password: <%= ENV["XPENSE_DATABASE_PASSWORD"] %>
