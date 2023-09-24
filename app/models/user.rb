@@ -33,8 +33,7 @@ class User < ApplicationRecord
   has_many :cycles, dependent: :destroy
   has_many :incomes, through: :cycles
   has_many :expenses, through: :cycles
-  has_many :fixed_incomes, dependent: :destroy
-  has_many :fixed_expenses, dependent: :destroy
+  has_many :fixed_cash_flows, dependent: :destroy
 
   after_create :create_cycle
 

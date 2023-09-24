@@ -1,9 +1,10 @@
 # == Schema Information
 #
-# Table name: fixed_expenses
+# Table name: fixed_cash_flows
 #
 #  id          :bigint           not null, primary key
 #  amount      :float            not null
+#  category    :integer          default(0), not null
 #  description :text             not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -11,12 +12,14 @@
 #
 # Indexes
 #
-#  index_fixed_expenses_on_user_id  (user_id)
+#  index_fixed_cash_flows_on_user_id  (user_id)
 #
 # Foreign Keys
 #
 #  fk_rails_...  (user_id => users.id)
 #
-class FixedExpense < ApplicationRecord
+class FixedCashFlow < ApplicationRecord
   belongs_to :user
+
+  enum category: { income: 0, expense: 1 }
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_24_224344) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_24_230058) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,22 +33,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_224344) do
     t.index ["cycle_id"], name: "index_expenses_on_cycle_id"
   end
 
-  create_table "fixed_expenses", force: :cascade do |t|
+  create_table "fixed_cash_flows", force: :cascade do |t|
     t.text "description", null: false
     t.float "amount", null: false
+    t.integer "category", default: 0, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_fixed_expenses_on_user_id"
-  end
-
-  create_table "fixed_incomes", force: :cascade do |t|
-    t.text "description", null: false
-    t.float "amount", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_fixed_incomes_on_user_id"
+    t.index ["user_id"], name: "index_fixed_cash_flows_on_user_id"
   end
 
   create_table "incomes", force: :cascade do |t|
@@ -82,7 +74,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_224344) do
 
   add_foreign_key "cycles", "users"
   add_foreign_key "expenses", "cycles"
-  add_foreign_key "fixed_expenses", "users"
-  add_foreign_key "fixed_incomes", "users"
+  add_foreign_key "fixed_cash_flows", "users"
   add_foreign_key "incomes", "cycles"
 end
