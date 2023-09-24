@@ -1,0 +1,28 @@
+require: rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "db/**/*"
+    - "bin/*"
+    - "config/**/*"
+    - "lib/**/*"
+    - "Guardfile"
+    - "Rakefile"
+    - "node_modules/**/*"
+    - "Gemfile"
+    - "config.ru"
+
+  DisplayCopNames: true
+  TargetRubyVersion: '3.2.2'
+
+Metrics/BlockLength:
+  Exclude:
+    - "lib/tasks/auto_annotate_models.rake"
+Metrics/MethodLength:
+  Max: 20
+
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
