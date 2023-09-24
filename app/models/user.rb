@@ -31,6 +31,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
 
   has_many :cycles, dependent: :destroy
+  has_many :incomes, through: :cycles
+  has_many :expenses, through: :cycles
 
   after_create :create_cycle
 
