@@ -19,4 +19,19 @@
 #
 class Expense < ApplicationRecord
   belongs_to :cycle
+
+  after_create :add_to_cycle_balance
+  before_destroy :substract_from_cycle_balance
+
+  private
+
+  def substract_from_cycle_balance
+    current_balance = cycle.balance
+    cycle.update(balance: current_balance - amount)
+  end
+
+  def add_to_cycle_balance
+    current_balance = cycle.balance
+    cycle.update(balance: current_balance + amount)
+  end
 end

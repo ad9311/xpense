@@ -44,4 +44,7 @@ group :development do
 
   # Use html2haml to convert .erb to .haml
   gem 'html2haml'
+
+  gem 'sorbet'
+  gem 'sorbet-runtime'
 end
