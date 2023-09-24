@@ -210,6 +210,9 @@ GEM
     ruby_parser (3.20.3)
       sexp_processor (~> 4.16)
     sexp_processor (4.17.0)
+    sorbet (0.5.11039)
+      sorbet-static (= 0.5.11039)
+    sorbet-static (0.5.11039-x86_64-linux)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -247,6 +250,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.8)
   rubocop-rails
+  sorbet
   sprockets-rails
   tailwindcss-rails
   tzinfo-data

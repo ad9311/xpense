@@ -29,4 +29,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
+
+  has_many :cycles, dependent: :destroy
+
+  after_create :create_cycle
+
+  private
+
+  def create_cycle
+    cycles.create(date: DateTime.now)
+  end
 end
