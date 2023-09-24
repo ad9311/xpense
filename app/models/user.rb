@@ -33,12 +33,15 @@ class User < ApplicationRecord
   has_many :cycles, dependent: :destroy
   has_many :incomes, through: :cycles
   has_many :expenses, through: :cycles
+  has_many :fixed_incomes, dependent: :destroy
+  has_many :fixed_expenses, dependent: :destroy
 
   after_create :create_cycle
 
   private
 
   def create_cycle
-    cycles.create(month: DateTime.now.month)
+    current_date = DateTime.now
+    cycles.create(month: current_date.month, year: current_date.year)
   end
 end

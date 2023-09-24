@@ -5,6 +5,7 @@
 #  id         :bigint           not null, primary key
 #  balance    :float            default(0.0), not null
 #  month      :integer          not null
+#  year       :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :bigint           not null
