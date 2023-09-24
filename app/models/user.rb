@@ -39,6 +39,6 @@ class User < ApplicationRecord
   private
 
   def create_cycle
-    cycles.create(date: DateTime.now)
+    cycles.create(month: DateTime.now.month)
   end
 end

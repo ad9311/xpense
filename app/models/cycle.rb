@@ -4,7 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  balance    :float            default(0.0), not null
-#  date       :date             not null
+#  month      :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :bigint           not null
@@ -21,4 +21,8 @@ class Cycle < ApplicationRecord
   belongs_to :user
   has_many :incomes, dependent: :destroy
   has_many :expenses, dependent: :destroy
+
+  def month_string
+    DateTime::MONTHNAMES[month]
+  end
 end

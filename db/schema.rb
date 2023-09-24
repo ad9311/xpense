@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_002507) do
   enable_extension "plpgsql"
 
   create_table "cycles", force: :cascade do |t|
-    t.date "date", null: false
+    t.integer "month", null: false
     t.bigint "user_id", null: false
     t.float "balance", default: 0.0, null: false
     t.datetime "created_at", null: false
