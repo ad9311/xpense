@@ -20,8 +20,8 @@
 class Expense < ApplicationRecord
   belongs_to :cycle
 
-  after_create :add_to_cycle_balance
-  before_destroy :substract_from_cycle_balance
+  after_create :substract_from_cycle_balance
+  before_destroy :add_to_cycle_balance
 
   private
 
