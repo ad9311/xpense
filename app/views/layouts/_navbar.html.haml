@@ -1,2 +1,4 @@
-= link_to "Profile", user_path(current_user)
-= button_to "Sign out", destroy_user_session_path, method: :delete
+%nav
+  = link_to "Dashboard", root_path
+  = link_to "Profile", user_path(current_user)
+  = button_to "Sign out", destroy_user_session_path, method: :delete

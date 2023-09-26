@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
 
   resources 'users', only: %i[show]
+  resources 'fixed_cash_flows', only: %i[new create]
 end
