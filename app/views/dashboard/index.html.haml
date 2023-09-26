@@ -1,4 +1,6 @@
 %h2= "#{@current_cycle.month_string} #{@current_cycle.year}"
+= link_to "New income", new_cycle_income_path(@current_cycle.id)
+= link_to "New expense", new_cycle_expense_path(@current_cycle.id)
 %section
   %h3 Income
   %table

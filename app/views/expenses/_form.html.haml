@@ -1,0 +1,10 @@
+%h2 New expense
+= form_with(model: [@cycle, @expense]) do |f|
+  %div
+    = f.label :description
+    = f.text_area :description
+  %div
+    = f.label :amount
+    = f.number_field :amount, placeholder: 0.0, min: 1, step: 1
+  %div
+    = f.submit 'Add expense'
