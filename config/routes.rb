@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     resources 'incomes', only: %i[new create]
     resources 'expenses', only: %i[new create]
   end
+
+  resources 'users', only: %i[show]
 end
