@@ -7,10 +7,10 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
-    = stylesheet_link_tag "application"
+    -# = stylesheet_link_tag "application"
   %body
     %header
       - if user_signed_in?
         = render "layouts/navbar"
-    %main
+    %main{ class: "container mx-auto px-2 sm:px-0" }
       = yield
