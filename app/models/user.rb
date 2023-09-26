@@ -37,6 +37,10 @@ class User < ApplicationRecord
 
   after_create :create_cycle
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
   private
 
   def create_cycle

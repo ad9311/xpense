@@ -1,0 +1,13 @@
+%h2 New fixed cash flow
+= form_with model: @fixed_cash_flow  do |f|
+  %div
+    = f.label :description
+    = f.text_area :description
+  %div
+    = f.label :amount
+    = f.number_field :amount, placeholder: 0.0, min: 1, step: 1
+  %div
+    = f.label :category
+    = f.select :category, FixedCashFlow.categories.keys.map { |category| [category.humanize, category] }
+  %div
+    = f.submit 'Add fixed cash flow'

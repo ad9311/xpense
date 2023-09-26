@@ -4,5 +4,7 @@ class DashboardController < ApplicationController
     @current_cycle = current_user.cycles.find_by(month: @current_date.month, year: @current_date.year)
     @incomes = @current_cycle.incomes
     @expenses = @current_cycle.expenses
+    @total_income = @incomes.sum(:amount)
+    @total_expenses = @expenses.sum(:amount)
   end
 end
