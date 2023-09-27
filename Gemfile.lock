@@ -217,10 +217,6 @@ GEM
     sentry-ruby (5.11.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
     sexp_processor (4.17.0)
-    sorbet (0.5.11039)
-      sorbet-static (= 0.5.11039)
-    sorbet-runtime (0.5.11039)
-    sorbet-static (0.5.11039-x86_64-linux)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -261,8 +257,6 @@ DEPENDENCIES
   rubocop-rails
   sentry-rails (~> 5.11)
   sentry-ruby (~> 5.11)
-  sorbet
-  sorbet-runtime
   sprockets-rails
   tailwindcss-rails
   tzinfo-data

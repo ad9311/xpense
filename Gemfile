@@ -33,6 +33,13 @@ gem "annotate"
 # Use devise for user authentication
 gem "devise", "~> 4.9"
 
+# Fly.dev
+gem "dockerfile-rails", ">= 1.5", :group => :development
+
+gem "sentry-ruby", "~> 5.11"
+
+gem "sentry-rails", "~> 5.11"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -44,13 +51,4 @@ group :development do
 
   # Use html2haml to convert .erb to .haml
   gem 'html2haml'
-
-  gem 'sorbet'
-  gem 'sorbet-runtime'
 end
-
-gem "dockerfile-rails", ">= 1.5", :group => :development
-
-gem "sentry-ruby", "~> 5.11"
-
-gem "sentry-rails", "~> 5.11"
