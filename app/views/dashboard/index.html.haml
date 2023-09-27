@@ -38,8 +38,8 @@
     %thead
       %tr
         %th Balance
-        %th Total income
-        %th Total expenses
+        %th Income
+        %th Expenses
     %tbody
       %tr
         %td.number{ style: "font-weight: 700;", class: @current_cycle.balance.positive? ? "text-income" : "text-expense"}= number_to_currency(@current_cycle.balance)

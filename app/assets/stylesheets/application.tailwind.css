@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Yantramanav', sans-serif;
-  @apply text-slate-800;
+  @apply text-slate-700;
 }
 
 .number {
@@ -16,7 +16,11 @@ body {
 }
 
 .link {
-  @apply text-sky-500 hover:text-sky-700 hover:underline;
+  @apply text-sky-500 font-bold hover:text-sky-700 hover:underline;
+}
+
+.icon {
+  @apply w-8;
 }
 
 .main-table {
@@ -36,7 +40,7 @@ body {
 }
 
 .main-table td:first-child {
-  @apply max-w-[10rem] break-words text-sm sm:text-base;
+  @apply max-w-[8rem] break-words text-sm sm:text-base;
 }
 
 .main-table td {
