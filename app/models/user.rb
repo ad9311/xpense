@@ -30,7 +30,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
 
-  validates :first_name, :last_name, presence: :true
+  validates :first_name, :last_name, presence: true
 
   has_many :cycles, dependent: :destroy
   has_many :incomes, through: :cycles

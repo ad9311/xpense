@@ -22,7 +22,7 @@ class FixedCashFlow < ApplicationRecord
   belongs_to :user
 
   validates :description, length: { maximum: 50, minimum: 1 }
-  validates :category, presence: :true
+  validates :category, presence: true
   validates :amount, numericality: { greater_than: 0 }
 
   enum category: { income: 0, expense: 1 }

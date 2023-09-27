@@ -1,0 +1,11 @@
+.mb-5.flex.items-center
+  = link_to root_path do
+    = image_tag "icons/arrow_left.svg", alt: "back", class: "icon mr-2"
+  %h2.text-xl.font-bold= "Edit limit for #{@cycle.month_year_string}"
+= render "layouts/errors", model: @expense_limit
+= form_with(model: [@cycle, @expense_limit], class: "form") do |f|
+  .form-group
+    = f.label :amount
+    = f.number_field :amount, placeholder: 0, min: 0, step: 1
+  .form-actions
+    = f.submit 'Edit amount', class: "link"
