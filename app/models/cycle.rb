@@ -22,6 +22,7 @@ class Cycle < ApplicationRecord
   belongs_to :user
   has_many :incomes, dependent: :destroy
   has_many :expenses, dependent: :destroy
+  has_one :expense_limit, dependent: :destroy
 
   validates :balance, numericality: true
   validates :month, numericality: { greater_than: 0, less_than: 13, only_integer: true }

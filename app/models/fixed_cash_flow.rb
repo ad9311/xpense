@@ -4,7 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  amount      :float            not null
-#  category    :integer          default(0), not null
+#  category    :integer          default("income"), not null
 #  description :text             not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

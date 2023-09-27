@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root 'dashboard#index'
+  root 'dashboard#show'
 
   devise_for :users
 
-  resources 'dashboard', only: %i[index]
+  resources 'dashboard', only: %i[show]
   resources 'cycles' do
     resources 'incomes', only: %i[new create]
     resources 'expenses', only: %i[new create]
