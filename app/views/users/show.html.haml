@@ -19,10 +19,3 @@
           %td= fcf.description
           %td.number{ class: fcf.income? ? "text-income" : "text-expense" }= number_to_currency(fcf.amount)
           %td{ class: fcf.income? ? "text-income" : "text-expense" }= fcf.category.titleize
--# = link_to "New fixed cash flow", new_fixed_cash_flow_path
--# %ul
--#   - @fixed_incomes.each do |fi|
--#     %li= "#{fi.description} #{number_to_currency(fi.amount)}"
--# %ul
--#   - @fixed_expenses.each do |fe|
--#     %li= "#{fe.description} #{number_to_currency(fe.amount)}"
