@@ -51,7 +51,8 @@ body {
   @apply block italic text-neutral-500;
 }
 
-.form .form-group input {
+.form .form-group input,
+.form .form-group select {
   @apply w-full border-neutral-300;
 }
 

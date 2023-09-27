@@ -1,7 +1,7 @@
 .mb-5.flex.items-center
   = link_to root_path do
     = image_tag "icons/arrow_left.svg", alt: "back", class: "icon mr-2"
-  %h2.text-xl New income
+  %h2.text-xl.font-bold New income
 = form_with(model: [@cycle, @income], class: "form") do |f|
   .form-group
     = f.label :description
