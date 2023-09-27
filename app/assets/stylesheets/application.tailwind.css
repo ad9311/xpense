@@ -46,3 +46,19 @@ body {
 .main-table td {
   @apply px-1 py-1.5 text-sm sm:text-base border border-neutral-300;
 }
+
+.form .form-group label {
+  @apply block italic text-neutral-500;
+}
+
+.form .form-group input {
+  @apply w-full border-neutral-300;
+}
+
+.form .form-group textarea {
+  @apply h-24 w-full border-neutral-300 resize-none;
+}
+
+.form .form-actions {
+  @apply mt-5 flex items-center justify-end;
+}
