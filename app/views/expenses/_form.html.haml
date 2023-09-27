@@ -2,6 +2,7 @@
   = link_to root_path do
     = image_tag "icons/arrow_left.svg", alt: "back", class: "icon mr-2"
   %h2.text-xl.font-bold New expense
+= render "layouts/errors", model: @expense
 = form_with(model: [@cycle, @expense], class: "form") do |f|
   .form-group
     = f.label :description

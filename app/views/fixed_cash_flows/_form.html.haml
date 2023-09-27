@@ -2,6 +2,7 @@
   = link_to user_path(current_user) do
     = image_tag "icons/arrow_left.svg", alt: "back", class: "icon mr-2"
   %h2.text-xl.font-bold New fixed cash flow
+= render "layouts/errors", model: @fixed_cash_flow
 = form_with model: @fixed_cash_flow, class: "form"  do |f|
   .form-group
     = f.label :description

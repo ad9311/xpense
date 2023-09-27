@@ -20,6 +20,9 @@
 class Expense < ApplicationRecord
   belongs_to :cycle
 
+  validates :description, length: { maximum: 50, minimum: 1 }
+  validates :amount, numericality: { greater_than: 0 }
+
   after_create :substract_from_cycle_balance
   before_destroy :add_to_cycle_balance
 
