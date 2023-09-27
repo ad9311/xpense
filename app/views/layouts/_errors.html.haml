@@ -1,0 +1,4 @@
+- if !model.errors.blank?
+  %ul.bg-neutral-100.border.p-2.mb-5
+    - model.errors.full_messages.each do |e|
+      %li.text-expense= "#{e}"

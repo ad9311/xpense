@@ -1,10 +1,14 @@
-%h2 New expense
-= form_with(model: [@cycle, @income]) do |f|
-  %div
+.mb-5.flex.items-center
+  = link_to root_path do
+    = image_tag "icons/arrow_left.svg", alt: "back", class: "icon mr-2"
+  %h2.text-xl.font-bold New income
+= render "layouts/errors", model: @income
+= form_with(model: [@cycle, @income], class: "form") do |f|
+  .form-group
     = f.label :description
     = f.text_area :description
-  %div
+  .form-group
     = f.label :amount
-    = f.number_field :amount, placeholder: 0.0, min: 1, step: 1
-  %div
-    = f.submit 'Add income'
+    = f.number_field :amount, placeholder: 0.0, step: 1
+  .form-actions
+    = f.submit 'Add income', class: "link"

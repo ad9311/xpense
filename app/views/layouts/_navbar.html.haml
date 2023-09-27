@@ -1,4 +1,17 @@
-%nav
-  = link_to "Dashboard", root_path
-  = link_to "Profile", user_path(current_user)
-  = button_to "Sign out", destroy_user_session_path, method: :delete
+- if user_signed_in?
+  %nav.bg-neutral-100.border-2.mb-5
+    %h1{ class: "text-xl font-bold px-2 sm:px-0" } Xpense
+    %div{ class: "px-2 sm:px-0" }
+      %hr.my-2
+    %div{ class: "flex justify-between items-center container mx-auto px-2 sm:px-0" }
+      .flex.items-center
+        = link_to root_path do
+          = image_tag "icons/home.svg", alt: "home", class: "icon mr-3"
+        = link_to user_path(current_user) do
+          = image_tag "icons/profile.svg", alt: "profile", class: "icon"
+      = button_to destroy_user_session_path, method: :delete do
+        = image_tag "icons/sign_out", alt: "sign out", class: "icon pt-1"
+- else
+  .bg-neutral-100.border-2.mb-5
+    %div{ class: "flex justify-between items-center container mx-auto py-2 px-2 sm:px-0" }
+      %h1.text-2xl.font-bold Xpense

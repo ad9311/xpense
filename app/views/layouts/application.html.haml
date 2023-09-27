@@ -10,7 +10,6 @@
     -# = stylesheet_link_tag "application"
   %body
     %header
-      - if user_signed_in?
-        = render "layouts/navbar"
+      = render "layouts/navbar"
     %main{ class: "container mx-auto px-2 sm:px-0" }
       = yield

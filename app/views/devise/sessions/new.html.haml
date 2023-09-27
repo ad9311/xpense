@@ -1,17 +1,18 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
+%h2.text-xl.font-bold.mb-5 Log in
+= form_with(model: resource, url: session_path(resource_name), class: "form") do |f|
+  = render "layouts/errors", model: resource
+  .form-group
     = f.label :email
-    %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
+  .form-group
     = f.label :password
-    %br/
     = f.password_field :password, autocomplete: "current-password"
   - if devise_mapping.rememberable?
-    .field
+    .form-group.flex.items-center
       = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+      = f.label :remember_me, class: "ml-2"
+  .form-actions
+    = f.submit "Log in", class: "link"
+%hr.my-3
+.link
+  = render "devise/shared/links"
