@@ -85,6 +85,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dockerfile-rails (1.5.10)
+      rails (>= 3.0.0)
     erubi (1.12.0)
     erubis (2.7.0)
     globalid (1.2.1)
@@ -209,6 +211,11 @@ GEM
     ruby-progressbar (1.13.0)
     ruby_parser (3.20.3)
       sexp_processor (~> 4.16)
+    sentry-rails (5.11.0)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.11.0)
+    sentry-ruby (5.11.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     sexp_processor (4.17.0)
     sorbet (0.5.11039)
       sorbet-static (= 0.5.11039)
@@ -245,12 +252,15 @@ DEPENDENCIES
   annotate
   debug
   devise (~> 4.9)
+  dockerfile-rails (>= 1.5)
   haml-rails
   html2haml
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.8)
   rubocop-rails
+  sentry-rails (~> 5.11)
+  sentry-ruby (~> 5.11)
   sorbet
   sorbet-runtime
   sprockets-rails
