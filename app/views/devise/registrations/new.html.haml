@@ -1,4 +1,4 @@
-%h2.text-xl.font-bold Sign up
+%h2.text-xl.font-bold.mb-5 Sign up
 = form_with(model: resource, local: true, url: registration_path(resource_name), class: "form") do |f|
   = render "layouts/errors", model: resource
   .form-group
