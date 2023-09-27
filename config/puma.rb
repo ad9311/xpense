@@ -15,7 +15,7 @@ worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
-port ENV.fetch("PORT") { 3000 }
+# port ENV.fetch("PORT") { 3000 }
 
 # Specifies the `environment` that Puma will run in.
 #
@@ -40,4 +40,14 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 # preload_app!
 
 # Allow puma to be restarted by `bin/rails restart` command.
+workers Integer(ENV['WEB_CONCURRENCY'] || 2)
+threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
+threads threads_count, threads_count
+
+preload_app!
+
+rackup      DefaultRackup
+port        ENV['PORT']     || 3000
+environment ENV['RACK_ENV'] || 'development'
+bind        'tcp://0.0.0.0:3000' # Specify the desired host and port
 plugin :tmp_restart
