@@ -47,6 +47,7 @@ class User < ApplicationRecord
 
   def create_cycle
     current_date = DateTime.now
-    cycles.create(month: current_date.month, year: current_date.year)
+    cycle = cycles.create(month: current_date.month, year: current_date.year)
+    ExpenseLimit.create(cycle:)
   end
 end

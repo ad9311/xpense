@@ -31,4 +31,8 @@ class Cycle < ApplicationRecord
   def month_string
     DateTime::MONTHNAMES[month]
   end
+
+  def month_year_string
+    "#{month_string} #{year}"
+  end
 end

@@ -1,14 +1,25 @@
 class CyclesController < ApplicationController
+  before_action :set_cycle, only: %i[edit]
+
   def show
     @current_date = DateTime.now
-    @current_cycle = current_user.cycles.find_by(month: @current_date.month, year: @current_date.year)
-    @incomes = @current_cycle.incomes
-    @expenses = @current_cycle.expenses
+    @cycle = current_user.cycles.find_by(month: @current_date.month, year: @current_date.year)
+    @incomes = @cycle.incomes
+    @expenses = @cycle.expenses
     @total_income = @incomes.sum(:amount)
     @total_expenses = @expenses.sum(:amount)
+    @expense_limit = @cycle.expense_limit
   end
 
-  def edit; end
+  def edit
+    @expense_limit = @cycle.expense_limit
+  end
 
   def update; end
+
+  private
+
+  def set_cycle
+    @cycle = Cycle.find_by(id: params[:id])
+  end
 end

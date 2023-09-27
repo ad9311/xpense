@@ -1,12 +1,12 @@
-%h2.text-2xl.font-bold= "#{@current_cycle.month_string} #{@current_cycle.year}"
+%h2.text-2xl.font-bold= "#{@cycle.month_year_string}"
 %ul.flex
   %li.link.mr-2
-    = link_to "New income", new_cycle_income_path(@current_cycle.id)
+    = link_to "New income", new_cycle_income_path(@cycle)
   %li.link
-    = link_to "New expense", new_cycle_expense_path(@current_cycle.id)
+    = link_to "New expense", new_cycle_expense_path(@cycle)
   %li.link.ml-2
-    |
-    = link_to "Edit cycle", new_cycle_expense_path(@current_cycle.id)
+    %span.text-slate-700.font-bold= "|"
+    = link_to "Edit cycle", edit_cycle_path(@cycle)
 %section.mt-3
   %h3.mb-1.text-xl.font-bold Income
   %table.main-table
@@ -45,6 +45,6 @@
         %th Expenses
     %tbody
       %tr
-        %td.number{ style: "font-weight: 700;", class: @current_cycle.balance.positive? ? "text-income" : "text-expense"}= number_to_currency(@current_cycle.balance)
+        %td.number{ style: "font-weight: 700;", class: @cycle.balance.positive? ? "text-income" : "text-expense"}= number_to_currency(@cycle.balance)
         %td.number.text-income= number_to_currency(@total_income)
         %td.number.text-expense= number_to_currency(@total_expenses)
