@@ -13,6 +13,8 @@ class CyclesController < ApplicationController
 
   def edit
     @expense_limit = @cycle.expense_limit
+    @total_income = @cycle.incomes.sum(:amount)
+    @total_expenses = @cycle.expenses.sum(:amount)
   end
 
   def update; end

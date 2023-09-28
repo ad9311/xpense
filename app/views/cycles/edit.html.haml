@@ -3,6 +3,16 @@
     = image_tag "icons/arrow_left.svg", alt: "back", class: "icon mr-2"
   %h2.text-xl.font-bold= "#{@cycle.month_year_string}"
 %section.mt-3
+  %table.main-table
+    %thead
+      %tr
+        %th Total income
+        %th Total expenses
+    %tbody
+      %tr.text-center
+        %td.text-income= number_to_currency(@total_income)
+        %td.text-expense= number_to_currency(@total_expenses)
+%section.mt-3
   %h3.mb-1.font-bold Expense limit
   %ul.flex
     %li.link.mr-2

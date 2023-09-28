@@ -37,6 +37,15 @@
           %td.italic{ title: expense.created_at.strftime('%m/%d/%Y') }= expense.created_at.strftime('%a %d')
 %section.mt-10
   %h3.mb-1.text-xl.font-bold Total
+  .mb-3
+    %span.text-neutral-400.text-xs Expense limit
+    .flex.items-center
+      - if @cycle.expense_limit.amount.zero?
+        = image_tag "icons/alert-neutral.svg", alt: "alert", class: "icon"
+        %span.ml-2.font-bold.text-neutral-400= @cycle.expense_limit.amount
+      - else
+        = image_tag (@cycle.expense_limit.amount < @total_expenses ? 'icons/alert-red.svg' : 'icons/alert-blue.svg'), alt: "alert", class: "icon"
+        %span.ml-2.font-bold{ class: @cycle.expense_limit.amount < @total_expenses ? 'text-expense' : 'text-income'}= @cycle.expense_limit.amount
   %table.main-table
     %thead
       %tr
@@ -44,7 +53,7 @@
         %th Income
         %th Expenses
     %tbody
-      %tr
+      %tr.text-center
         %td.number{ style: "font-weight: 700;", class: @cycle.balance.positive? ? "text-income" : "text-expense"}= number_to_currency(@cycle.balance)
         %td.number.text-income= number_to_currency(@total_income)
         %td.number.text-expense= number_to_currency(@total_expenses)
