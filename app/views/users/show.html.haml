@@ -13,7 +13,9 @@
     %tbody
       - @cycles.each do |cycle|
         %tr
-          %td= cycle.month_year_string
+          %td
+            = link_to cycle_path(cycle) do
+              %span.link= cycle.month_year_string
           %td.text-center.number{ class: cycle.balance.positive? ? 'text-income' : 'text-expense' }= number_to_currency(cycle.balance)
 %br
 %section.mt-3

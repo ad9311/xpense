@@ -1,7 +1,7 @@
 %section.mt-3
   .mb-5.flex.items-center.justify-between
     .flex.items-center
-      = link_to root_path do
+      = link_to user_path(current_user) do
         = image_tag "icons/arrow_left.svg", alt: "back", class: "icon mr-2"
       %h2.mb-1.font-bold.text-xl Cycles
   %table.main-table
@@ -12,5 +12,7 @@
     %tbody
       - @cycles.each do |cycle|
         %tr
-          %td= cycle.month_year_string
+          %td
+            = link_to cycle_path(cycle) do
+              %span.link= cycle.month_year_string
           %td.text-center.number{ class: cycle.balance.positive? ? 'text-income' : 'text-expense' }= number_to_currency(cycle.balance)
