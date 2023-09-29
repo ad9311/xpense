@@ -17,9 +17,13 @@
     %tbody
       - @incomes.each do |income|
         %tr
-          %td= income.description
+          %td
+            .flex.items-center
+              = link_to edit_cycle_income_path(@cycle, income) do
+                = image_tag "icons/pencil.svg", alt: "edit", class: "icon-small"
+              %span.pl-2= income.description
           %td.number.text-income= number_to_currency(income.amount)
-          %td.italic{ title: income.created_at.strftime('%m/%d/%Y') }= income.created_at.strftime('%a %d')
+          %td.italic.text-neutral-500{ title: income.created_at.strftime('%m/%d/%Y') }= income.created_at.strftime('%a %d')
 %section.mt-10
   %h3.mb-1.text-xl.font-bold Expenses
   %table.main-table
@@ -31,7 +35,11 @@
     %tbody
       - @expenses.each do |expense|
         %tr
-          %td{ class: "max-w-[10rem] break-words" }= expense.description
+          %td
+            .flex.items-center
+              = link_to edit_cycle_expense_path(@cycle, expense) do
+                = image_tag "icons/pencil.svg", alt: "edit", class: "icon-small"
+              %span.pl-2= expense.description
           %td.number.text-expense= number_to_currency(expense.amount)
           %td.italic{ title: expense.created_at.strftime('%m/%d/%Y') }= expense.created_at.strftime('%a %d')
 %section.mt-10
@@ -40,10 +48,10 @@
     %span.text-neutral-400.text-xs Expense limit
     .flex.items-center
       - if @cycle.expense_limit.zero?
-        = image_tag "icons/alert-neutral.svg", alt: "alert", class: "icon"
+        = image_tag "icons/alert-neutral.svg", alt: "alert", class: "icon-small"
         %span.ml-2.font-bold.text-neutral-400= number_to_currency(@cycle.expense_limit)
       - else
-        = image_tag (@cycle.expense_limit < @total_expenses ? 'icons/alert-red.svg' : 'icons/alert-blue.svg'), alt: "alert", class: "icon"
+        = image_tag (@cycle.expense_limit < @total_expenses ? 'icons/alert-red.svg' : 'icons/alert-blue.svg'), alt: "alert", class: "icon-small"
         %span.ml-2.font-bold{ class: @cycle.expense_limit < @total_expenses ? 'text-expense' : 'text-income'}= number_to_currency(@cycle.expense_limit)
   %table.main-table
     %thead

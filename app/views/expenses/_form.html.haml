@@ -1,7 +1,10 @@
-.mb-5.flex.items-center
-  = link_to root_path do
-    = image_tag "icons/arrow_left.svg", alt: "back", class: "icon mr-2"
-  %h2.text-xl.font-bold New expense
+.mb-5.flex.items-center.justify-between
+  .flex.items-center
+    = link_to root_path do
+      = image_tag "icons/arrow_left.svg", alt: "back", class: "icon mr-2"
+    %h2.text-xl.font-bold New expense
+  - unless @expense.id.nil?
+    = button_to "Delete", cycle_expense_path(@cycle, @expense), method: :delete, class: "mt-1 link-delete"
 = render "layouts/errors", model: @expense
 = form_with(model: [@cycle, @expense], class: "form") do |f|
   .form-group
@@ -9,6 +12,6 @@
     = f.text_area :description
   .form-group
     = f.label :amount
-    = f.number_field :amount, placeholder: 0.0, min: 1, step: 1
+    = f.number_field :amount, placeholder: 0.0, min: 1, step: 0.10
   .form-actions
-    = f.submit 'Add expense', class: "link"
+    = f.submit 'Submit', class: "link"
