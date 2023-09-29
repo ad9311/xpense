@@ -18,4 +18,4 @@
         %tr
           %td= ft.description
           %td.number{ class: ft.income? ? "text-income" : "text-expense" }= number_to_currency(ft.amount)
-          %td{ class: ft.income? ? "text-income" : "text-expense" }= ft.category.titleize
+          %td.text-center{ class: ft.income? ? "text-income" : "text-expense" }= ft.category.titleize

@@ -15,12 +15,16 @@ body {
   font-weight: 500;
 }
 
+.hover {
+  @apply transition-all ease-in-out duration-300;
+}
+
 .link {
-  @apply text-sky-500 font-bold hover:text-sky-700 hover:underline;
+  @apply text-sky-500 font-bold hover:text-sky-700 hover:underline hover;
 }
 
 .link-delete {
-  @apply text-red-500 font-bold hover:text-red-700 hover:underline;
+  @apply text-red-500 font-bold hover:text-red-700 hover:underline hover;
 }
 
 .icon {

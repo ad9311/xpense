@@ -1,11 +1,13 @@
 %h2.text-2xl.font-bold= "#{@cycle.month_year_string}"
-%ul.flex
-  %li.link.mr-2
-    = link_to "New income", new_cycle_income_path(@cycle)
-  %li.link
-    = link_to "New expense", new_cycle_expense_path(@cycle)
-  %li.link.ml-2
-    = link_to "Edit cycle", edit_cycle_path(@cycle)
+%nav
+  %ul.flex.items-center
+    %li
+      = link_to "New income", new_cycle_income_path(@cycle), class: "link"
+    %li.ml-2
+      = link_to "New expense", new_cycle_expense_path(@cycle), class: "link"
+    %li.ml-2
+      %span.pr-1= "|"
+      = link_to "Edit cycle", edit_cycle_path(@cycle), class: "link"
 %section.mt-3
   %h3.mb-1.text-xl.font-bold Income
   %table.main-table
@@ -41,7 +43,7 @@
                 = image_tag "icons/pencil.svg", alt: "edit", class: "icon-small"
               %span.pl-2= expense.description
           %td.number.text-expense= number_to_currency(expense.amount)
-          %td.text-center.italic{ title: expense.created_at.strftime('%m/%d/%Y') }= expense.created_at.strftime('%a %d')
+          %td.text-center.italic.text-neutral-500{ title: expense.created_at.strftime('%m/%d/%Y') }= expense.created_at.strftime('%a %d')
 %section.mt-10
   %h3.mb-1.text-xl.font-bold Total
   .mb-3
@@ -49,7 +51,7 @@
     .flex.items-center
       - if @cycle.expense_limit.zero?
         = image_tag "icons/alert-neutral.svg", alt: "alert", class: "icon-small"
-        %span.ml-2.font-bold.text-neutral-400= number_to_currency(@cycle.expense_limit)
+        %span.ml-2.font-bold.text-neutral-400.line-through= number_to_currency(@cycle.expense_limit)
       - else
         = image_tag (@cycle.expense_limit < @total_expenses ? 'icons/alert-red.svg' : 'icons/alert-blue.svg'), alt: "alert", class: "icon-small"
         %span.ml-2.font-bold{ class: @cycle.expense_limit < @total_expenses ? 'text-expense' : 'text-income'}= number_to_currency(@cycle.expense_limit)
