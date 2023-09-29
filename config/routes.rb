@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'cycles#show'
 
-  devise_for :users
+  devise_for :users, skip: [:registrations]
 
   resources 'cycles', only: %i[show edit] do
     resources 'incomes', only: %i[new create edit update destroy]
