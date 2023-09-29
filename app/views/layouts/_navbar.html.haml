@@ -1,9 +1,7 @@
 - if user_signed_in?
   %nav.bg-neutral-100.border-2.mb-5
-    %h1{ class: "text-xl font-bold px-2 sm:px-0" } Xpense
-    %div{ class: "px-2 sm:px-0" }
-      %hr.my-2
     %div{ class: "flex justify-between items-center container mx-auto px-2 sm:px-0" }
+      %h1{ class: "text-xl font-bold px-2 sm:px-0" } Xpense
       .flex.items-center
         = link_to root_path do
           = image_tag "icons/home.svg", alt: "home", class: "icon mr-3"

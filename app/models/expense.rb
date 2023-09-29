@@ -24,6 +24,7 @@ class Expense < ApplicationRecord
   validates :amount, numericality: { greater_than: 0 }
 
   after_create :substract_from_cycle_balance
+  after_update :update_cycle_balance
   before_destroy :add_to_cycle_balance
 
   private
@@ -31,6 +32,12 @@ class Expense < ApplicationRecord
   def substract_from_cycle_balance
     current_balance = cycle.balance
     cycle.update(balance: current_balance - amount)
+  end
+
+  def update_cycle_balance
+    total_incomes = cycle.incomes.sum(:amount)
+    total_expenses = cycle.expenses.sum(:amount)
+    cycle.update(balance: total_incomes - total_expenses)
   end
 
   def add_to_cycle_balance

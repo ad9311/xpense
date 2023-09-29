@@ -2,13 +2,14 @@
 #
 # Table name: cycles
 #
-#  id         :bigint           not null, primary key
-#  balance    :float            default(0.0), not null
-#  month      :integer          not null
-#  year       :integer          not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  user_id    :bigint           not null
+#  id            :bigint           not null, primary key
+#  balance       :float            default(0.0), not null
+#  expense_limit :float            default(0.0), not null
+#  month         :integer          not null
+#  year          :integer          not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  user_id       :bigint           not null
 #
 # Indexes
 #
@@ -26,8 +27,13 @@ class Cycle < ApplicationRecord
   validates :balance, numericality: true
   validates :month, numericality: { greater_than: 0, less_than: 13, only_integer: true }
   validates :year, numericality: { only_integer: true }
+  validates :expense_limit, numericality: { greater_than_or_equal_to: 0.0 }
 
   def month_string
     DateTime::MONTHNAMES[month]
+  end
+
+  def month_year_string
+    "#{month_string} #{year}"
   end
 end

@@ -30,12 +30,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
 
-  validates :first_name, :last_name, presence: :true
+  validates :first_name, :last_name, presence: true
 
   has_many :cycles, dependent: :destroy
   has_many :incomes, through: :cycles
   has_many :expenses, through: :cycles
-  has_many :fixed_cash_flows, dependent: :destroy
+  has_many :fixed_transactions, dependent: :destroy
 
   after_create :create_cycle
 
@@ -47,6 +47,7 @@ class User < ApplicationRecord
 
   def create_cycle
     current_date = DateTime.now
-    cycles.create(month: current_date.month, year: current_date.year)
+    cycle = cycles.create(month: current_date.month, year: current_date.year)
+    ExpenseLimit.create(cycle:)
   end
 end

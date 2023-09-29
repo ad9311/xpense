@@ -1,0 +1,17 @@
+.mb-5.flex.items-center
+  = link_to user_path(current_user) do
+    = image_tag "icons/arrow_left.svg", alt: "back", class: "icon mr-2"
+  %h2.text-xl.font-bold New fixed transactions
+= render "layouts/errors", model: @fixed_transactions
+= form_with model: @fixed_transactions, class: "form"  do |f|
+  .form-group
+    = f.label :description
+    = f.text_area :description
+  .form-group
+    = f.label :amount
+    = f.number_field :amount, placeholder: 0.0, min: 1, step: 0.10
+  .form-group
+    = f.label :category
+    = f.select :category, FixedTransaction.categories.keys.map { |category| [category.humanize, category] }
+  .form-actions
+    = f.submit 'Submit', class: "link"

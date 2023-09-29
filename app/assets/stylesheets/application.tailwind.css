@@ -19,8 +19,16 @@ body {
   @apply text-sky-500 font-bold hover:text-sky-700 hover:underline;
 }
 
+.link-delete {
+  @apply text-red-500 font-bold hover:text-red-700 hover:underline;
+}
+
 .icon {
   @apply w-8;
+}
+
+.icon-small {
+  @apply w-6;
 }
 
 .main-table {
@@ -45,6 +53,10 @@ body {
 
 .main-table td {
   @apply px-1 py-1.5 text-sm sm:text-base border border-neutral-300;
+}
+
+.form {
+  @apply max-w-sm mx-auto;
 }
 
 .form .form-group {
