@@ -10,40 +10,10 @@
       = link_to "Edit cycle", edit_cycle_path(@cycle), class: "link"
 %section.mt-3
   %h3.mb-1.text-xl.font-bold Income
-  %table.main-table
-    %thead
-      %tr
-        %th Description
-        %th Amount
-        %th Date
-    %tbody
-      - @incomes.each do |income|
-        %tr
-          %td
-            .flex.items-center
-              = link_to edit_cycle_income_path(@cycle, income) do
-                = image_tag "icons/pencil.svg", alt: "edit", class: "icon-small"
-              %span.pl-2= income.description
-          %td.number.text-income= number_to_currency(income.amount)
-          %td.text-center.italic.text-neutral-500{ title: income.created_at.strftime('%m/%d/%Y') }= income.created_at.strftime('%a %d')
+  = render "layouts/transactions_table", cycle: @cycle, transactions: @incomes
 %section.mt-10
   %h3.mb-1.text-xl.font-bold Expenses
-  %table.main-table
-    %thead
-      %tr
-        %th Description
-        %th Amount
-        %th Date
-    %tbody
-      - @expenses.each do |expense|
-        %tr
-          %td
-            .flex.items-center
-              = link_to edit_cycle_expense_path(@cycle, expense) do
-                = image_tag "icons/pencil.svg", alt: "edit", class: "icon-small"
-              %span.pl-2= expense.description
-          %td.number.text-expense= number_to_currency(expense.amount)
-          %td.text-center.italic.text-neutral-500{ title: expense.created_at.strftime('%m/%d/%Y') }= expense.created_at.strftime('%a %d')
+  = render "layouts/transactions_table", cycle: @cycle, transactions: @expenses 
 %section.mt-10
   %h3.mb-1.text-xl.font-bold Total
   .mb-3
