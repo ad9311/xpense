@@ -1,0 +1,18 @@
+%table.main-table
+  %thead
+    %tr
+      %th Description
+      %th Amount
+      %th Date
+  %tbody
+    - transactions.each do |transaction|
+      - is_income = transaction.is_a?(Income)
+      - edit_path = transaction.is_a?(Income) ? edit_cycle_income_path(cycle, transaction) : edit_cycle_expense_path(cycle, transaction)
+      %tr
+        %td
+          .flex.items-center
+            = link_to edit_path do
+              = image_tag "icons/pencil.svg", alt: "edit", class: "icon-small"
+            %span.pl-2= transaction.description
+        %td.number{ class: is_income ? 'text-income' : 'text-expense' }= number_to_currency(transaction.amount)
+        %td.text-center.italic.text-neutral-500{ title: transaction.created_at.strftime('%m/%d/%Y') }= transaction.created_at.strftime('%a %d')
