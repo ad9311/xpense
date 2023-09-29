@@ -1,6 +1,10 @@
 class CyclesController < ApplicationController
   before_action :set_cycle, only: %i[edit update_expense_limit]
 
+  def index
+    @cycles = current_user.cycles.order(created_at: :desc)
+  end
+
   def show
     @current_date = DateTime.now
     @cycle = current_user.cycles.find_by(month: @current_date.month, year: @current_date.year)
