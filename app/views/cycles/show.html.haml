@@ -5,7 +5,6 @@
   %li.link
     = link_to "New expense", new_cycle_expense_path(@cycle)
   %li.link.ml-2
-    %span.text-slate-700.font-bold= "|"
     = link_to "Edit cycle", edit_cycle_path(@cycle)
 %section.mt-3
   %h3.mb-1.text-xl.font-bold Income
@@ -40,12 +39,12 @@
   .mb-3
     %span.text-neutral-400.text-xs Expense limit
     .flex.items-center
-      - if @cycle.expense_limit.amount.zero?
+      - if @cycle.expense_limit.zero?
         = image_tag "icons/alert-neutral.svg", alt: "alert", class: "icon"
-        %span.ml-2.font-bold.text-neutral-400= @cycle.expense_limit.amount
+        %span.ml-2.font-bold.text-neutral-400= number_to_currency(@cycle.expense_limit)
       - else
-        = image_tag (@cycle.expense_limit.amount < @total_expenses ? 'icons/alert-red.svg' : 'icons/alert-blue.svg'), alt: "alert", class: "icon"
-        %span.ml-2.font-bold{ class: @cycle.expense_limit.amount < @total_expenses ? 'text-expense' : 'text-income'}= @cycle.expense_limit.amount
+        = image_tag (@cycle.expense_limit < @total_expenses ? 'icons/alert-red.svg' : 'icons/alert-blue.svg'), alt: "alert", class: "icon"
+        %span.ml-2.font-bold{ class: @cycle.expense_limit < @total_expenses ? 'text-expense' : 'text-income'}= number_to_currency(@cycle.expense_limit)
   %table.main-table
     %thead
       %tr

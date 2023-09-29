@@ -13,8 +13,11 @@
         %td.text-income= number_to_currency(@total_income)
         %td.text-expense= number_to_currency(@total_expenses)
 %section.mt-3
-  -# %h3.mb-1.font-bold Expense limit
-  -# %ul.flex
-  -#   %li.link.mr-2
-  -#     = link_to "Edit", edit_cycle_expense_limit_path(@cycle, @expense_limit)
-  -# .my-3.bg-neutral-100.border.p-2.text-income= number_to_currency(@expense_limit.amount)
+  %h3.mb-1.font-bold Expense limit
+  = render "layouts/errors", model: @cycle
+  = form_with model: @cycle, url: "/cycles/#{@cycle.id}/edit_expense_limit", class: "form", method: :patch do |f|
+    .form-group
+      = f.label :expense_limit
+      = f.number_field :expense_limit, placeholder: 0.0, step: 1, value: @cycle.expense_limit
+    .form-actions
+      = f.submit 'Edit', class: "link"

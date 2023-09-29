@@ -1,5 +1,5 @@
 class CyclesController < ApplicationController
-  before_action :set_cycle, only: %i[edit]
+  before_action :set_cycle, only: %i[edit update_expense_limit]
 
   def show
     @current_date = DateTime.now
@@ -17,11 +17,21 @@ class CyclesController < ApplicationController
     @total_expenses = @cycle.expenses.sum(:amount)
   end
 
-  def update; end
+  def update_expense_limit
+    if @cycle.update(cycle_params)
+      redirect_to cycle_path(@cycle)
+    else
+      render :edit
+    end
+  end
 
   private
 
   def set_cycle
     @cycle = Cycle.find_by(id: params[:id])
+  end
+
+  def cycle_params
+    params.require(:cycle).permit(:expense_limit)
   end
 end
