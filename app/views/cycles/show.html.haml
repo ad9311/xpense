@@ -23,7 +23,7 @@
                 = image_tag "icons/pencil.svg", alt: "edit", class: "icon-small"
               %span.pl-2= income.description
           %td.number.text-income= number_to_currency(income.amount)
-          %td.italic.text-neutral-500{ title: income.created_at.strftime('%m/%d/%Y') }= income.created_at.strftime('%a %d')
+          %td.text-center.italic.text-neutral-500{ title: income.created_at.strftime('%m/%d/%Y') }= income.created_at.strftime('%a %d')
 %section.mt-10
   %h3.mb-1.text-xl.font-bold Expenses
   %table.main-table
@@ -41,7 +41,7 @@
                 = image_tag "icons/pencil.svg", alt: "edit", class: "icon-small"
               %span.pl-2= expense.description
           %td.number.text-expense= number_to_currency(expense.amount)
-          %td.italic{ title: expense.created_at.strftime('%m/%d/%Y') }= expense.created_at.strftime('%a %d')
+          %td.text-center.italic{ title: expense.created_at.strftime('%m/%d/%Y') }= expense.created_at.strftime('%a %d')
 %section.mt-10
   %h3.mb-1.text-xl.font-bold Total
   .mb-3
