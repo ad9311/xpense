@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @fixed_cash_flows = current_user.fixed_cash_flows.order(category: :asc)
+    @fixed_transactionss = current_user.fixed_transactions.order(category: :asc)
   end
 end

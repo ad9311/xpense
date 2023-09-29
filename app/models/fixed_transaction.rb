@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: fixed_cash_flows
+# Table name: fixed_transactions
 #
 #  id          :bigint           not null, primary key
 #  amount      :float            not null
@@ -12,13 +12,13 @@
 #
 # Indexes
 #
-#  index_fixed_cash_flows_on_user_id  (user_id)
+#  index_fixed_transactions_on_user_id  (user_id)
 #
 # Foreign Keys
 #
 #  fk_rails_...  (user_id => users.id)
 #
-class FixedCashFlow < ApplicationRecord
+class FixedTransaction < ApplicationRecord
   belongs_to :user
 
   validates :description, length: { maximum: 50, minimum: 1 }

@@ -1,9 +1,9 @@
 .mb-5.flex.items-center
   = link_to user_path(current_user) do
     = image_tag "icons/arrow_left.svg", alt: "back", class: "icon mr-2"
-  %h2.text-xl.font-bold New fixed cash flow
-= render "layouts/errors", model: @fixed_cash_flow
-= form_with model: @fixed_cash_flow, class: "form"  do |f|
+  %h2.text-xl.font-bold New fixed transactions
+= render "layouts/errors", model: @fixed_transactions
+= form_with model: @fixed_transactions, class: "form"  do |f|
   .form-group
     = f.label :description
     = f.text_area :description
@@ -12,6 +12,6 @@
     = f.number_field :amount, placeholder: 0.0, min: 1, step: 1
   .form-group
     = f.label :category
-    = f.select :category, FixedCashFlow.categories.keys.map { |category| [category.humanize, category] }
+    = f.select :category, FixedTransaction.categories.keys.map { |category| [category.humanize, category] }
   .form-actions
-    = f.submit 'Add fixed cash flow', class: "link"
+    = f.submit 'Add fixed transactions', class: "link"
