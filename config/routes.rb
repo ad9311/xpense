@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
 
   resources 'users', only: %i[show]
-  resources 'fixed_transactions', only: %i[new create]
+  resources 'fixed_transactions', only: %i[new create edit update destroy]
 end
