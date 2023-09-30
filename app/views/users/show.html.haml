@@ -30,8 +30,12 @@
         %th Amount
         %th Type
     %tbody
-      - @fixed_transactionss.each do |ft|
+      - @fixed_transactions.each do |ft|
         %tr
-          %td= ft.description
+          %td
+            .flex.items-center
+              = link_to edit_fixed_transaction_path(ft) do
+                = image_tag "icons/pencil.svg", alt: "edit", class: "icon-small"
+              %span.pl-2= ft.description
           %td.number{ class: ft.income? ? "text-income" : "text-expense" }= number_to_currency(ft.amount)
           %td.text-center{ class: ft.income? ? "text-income" : "text-expense" }= ft.category.titleize
