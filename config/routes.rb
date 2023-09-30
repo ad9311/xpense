@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users, skip: [:registrations]
 
-  resources 'cycles', only: %i[show edit] do
+  resources 'cycles', only: %i[index show edit] do
     resources 'incomes', only: %i[new create edit update destroy]
     resources 'expenses', only: %i[new create edit update destroy]
   end
