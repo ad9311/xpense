@@ -34,5 +34,6 @@ module Xpense
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.time_zone = 'America/Bogota'
+    config.autoload_paths += %W(#{config.root}/lib)
   end
 end

@@ -1,5 +1,3 @@
-require_relative '../Cycles.rb'
-
 namespace :cycle do
   desc 'Create a new cycle'
   task create_new: :environment do

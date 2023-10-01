@@ -1,6 +1,8 @@
 class CyclesController < ApplicationController
   before_action :set_cycle, only: %i[edit update_expense_limit]
 
+  include Cycles
+
   def index
     @cycles = current_user.cycles.order(created_at: :desc)
   end
@@ -8,6 +10,7 @@ class CyclesController < ApplicationController
   def show
     @current_date = DateTime.now
     @cycle = current_user.cycles.find_by(month: @current_date.month, year: @current_date.year)
+    next_user_cycle(current_user) if @cycle.nil?
     @incomes = @cycle.incomes
     @expenses = @cycle.expenses
     @total_income = @incomes.sum(:amount)
