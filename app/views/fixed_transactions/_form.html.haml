@@ -12,7 +12,7 @@
     = f.text_area :description
   .form-group
     = f.label :amount
-    = f.number_field :amount, placeholder: 0.0, min: 1, step: 0.10
+    = f.number_field :amount, placeholder: 0.0, min: 1, step: 0.01
   .form-group
     = f.label :category
     = f.select :category, FixedTransaction.categories.keys.map { |category| [category.humanize, category] }
