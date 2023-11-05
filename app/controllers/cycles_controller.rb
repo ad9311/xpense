@@ -8,8 +8,8 @@ class CyclesController < ApplicationController
   end
 
   def show
-    @incomes = @cycle.incomes
-    @expenses = @cycle.expenses
+    @incomes = @cycle.incomes.order(created_at: :desc)
+    @expenses = @cycle.expenses.order(created_at: :desc)
     @total_income = @incomes.sum(:amount)
     @total_expenses = @expenses.sum(:amount)
     @expense_limit = @cycle.expense_limit
