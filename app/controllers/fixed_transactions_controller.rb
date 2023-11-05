@@ -5,6 +5,8 @@ class FixedTransactionsController < ApplicationController
     @fixed_transaction = FixedTransaction.new
   end
 
+  def edit; end
+
   def create
     @fixed_transaction = current_user.fixed_transactions.build(fixed_transactions_params)
     if @fixed_transaction.save
@@ -13,8 +15,6 @@ class FixedTransactionsController < ApplicationController
       render :new
     end
   end
-
-  def edit; end
 
   def update
     if @fixed_transaction.update(fixed_transactions_params)
@@ -37,7 +37,6 @@ class FixedTransactionsController < ApplicationController
   def set_fixed_transaction
     @fixed_transaction = FixedTransaction.find_by(id: params[:id])
   end
-
 
   def fixed_transactions_params
     params.require(:fixed_transaction).permit(:description, :amount, :category)
